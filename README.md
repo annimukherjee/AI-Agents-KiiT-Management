@@ -11,12 +11,12 @@ Currently `bonafide-agnet` checkes my emails for emails with subject [BONAFIDE],
 ### Compliance
 - NOC Generation
 - Bonafide Certificate Generation
-- Wi-Fi password reset
+- Wi-Fi password reset (ISHAAN)
 
 
 ### Placement Activites
 - ⁠KIIT Event Summaries (Web-Scraping)
-- KIIT Kareer Placement PDF’s summaries
+- KIIT Kareer Placement PDF’s summaries (PDF)
 
 ### Tutor Mentor
 - Leave Cert 
