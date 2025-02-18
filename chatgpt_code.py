@@ -2,8 +2,15 @@ import imaplib
 import email
 import re
 import sqlite3
+import os
 from email.header import decode_header
 from transformers import pipeline
+from dotenv import load_dotenv
+
+
+
+load_dotenv()
+
 
 # Step 1: Connect to Gmail and fetch emails with "[BONAFIDE]" in the subject
 def fetch_bonafide_emails(username, password):
@@ -92,8 +99,8 @@ def check_student_in_db(rollnum):
 
 # Main orchestration
 def main():
-    username = "mukh.aniruddha@gmail.com"
-    password = "**** **** **** ****"  # Consider using an app-specific password or OAuth2 for security
+    username = os.environ.get("EMAIL")
+    password = os.environ.get("EMAIL_PASSWORD")  # Consider using an app-specific password or OAuth2 for security
     emails = fetch_bonafide_emails(username, password)
     print(f"Fetched {len(emails)} bonafide emails.")
     
