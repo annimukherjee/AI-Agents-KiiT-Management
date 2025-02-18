@@ -1,0 +1,33 @@
+# Extension Notice-Registration for HackwithInfy Program for 2026 Graduating Batch.pdf
+
+## Page 1
+
+DEPARTMENTOFTRAINING&PLACEMENT
+KALINGAINSTITUTEOFINDUSTRIALTECHNOLOGY(KIIT)
+DEEMEDTOBEUNIVERSITY,BHUBANESWAR(ODISHA)
+No.KIIT-DU/T&P/25/141 Date:13thFeb’2025
+KindAttenn:2026GraduatingB.Tech,M.Tech(AllBranches)&MCAStudents
+ThisistoinformalltheabovestudentsthatInfosysisbackwithit’sSeventhEditionof
+HackWithInfyfor2026GraduatingBatch.
+HackWithInfyprovidestheperfectstepping-stoneforthestudentstoexploretheir
+interestinprogrammingandanopportunitytocompeteandwinexcitingprizes.Forthe
+topperformersitisadirectgatewaytoremarkablejobopportunityofSpecialist
+Programmer(INR9.5LPA).
+InterestedstudentsaredirectedtoREGISTERinthelinkgivenbelowonorbefore15th
+Feb’2025by2.00PMtoparticipateforthesame.
+https://tinyurl.com/Reg-Infosys-HackWithInfy-26
+ImportantNote:
+ Studentsarestrictlydirectedtoprovidetheirpersonalemailidduringthe
+registration.
+ StudentsshouldensurethattheyareprovidingcorrectpersoanlemailIDduring
+theregistrationbeforesubmissionofthegoogleform.
+ Wrongpersonalemailidwillleadtodisqualificationfromtheprogram.
+ ShortlistedstudentsfromtheregisteredstudentslistwillreceiveaLinkfrom
+InfosysforregistrationintheHackwithInfyportal.(Willbeinformedindue
+course).
+
+## Page 2
+
+Prof.(Dr.)PrachetBhuyan
+Professor&Dean(T&P),KIIT-DU
+
