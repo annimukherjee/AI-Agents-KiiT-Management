@@ -4,7 +4,6 @@ Contains code to make AI agents for KIIT
 
 Currently `bonafide-agent` checkes my emails for emails with subject [BONAFIDE], downloads them, sends it to an LLM to get the Name & Roll-Num and then check a database if the student exists. If the student exists then generate a PDF and <to be implemented> email the student back.
 
-
 ## Roadmap:
 
 
@@ -30,3 +29,26 @@ Currently `bonafide-agent` checkes my emails for emails with subject [BONAFIDE],
 - Holiday List
 
 
+
+
+## File Structure:
+
+```
+.
+├── -academic-activities
+│   └── academic-cal.py
+├── -compliance-agents
+│   ├── Wifi_reset.py
+│   ├── bonafide-emails.py
+│   ├── create_db.py
+│   ├── noc.py
+│   └── students.db
+├── -placement-agent
+│   ├── PlacementQueries.py
+│   ├── kiit-pdfs-kareer
+│   ├── kiit-pdfs-kareer-markdown
+│   └── pdf_emails
+├── -tutor-mentor
+│   └── leave-cert.py
+└── README.md
+```
