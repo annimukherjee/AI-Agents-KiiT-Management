@@ -1,21 +1,29 @@
 import sqlite3
 
-# Connect to (or create) the database
+# Connect to your SQLite database (or create it if it doesn't exist)
 conn = sqlite3.connect('students.db')
 cursor = conn.cursor()
 
 # Create the students table if it doesn't exist
 cursor.execute('''
-    CREATE TABLE IF NOT EXISTS students (
-        rollnum TEXT PRIMARY KEY,
-        name TEXT NOT NULL
-    )
+CREATE TABLE IF NOT EXISTS students (
+    name TEXT,
+    rollnum INTEGER
+)
 ''')
 
-# Optionally, insert some sample data
-# cursor.execute("INSERT INTO students (rollnum, name) VALUES (?, ?)", ("12345", "John Doe"))
-# conn.commit()
+# List of students to insert
+students = [
+    ('Mayur Gogoi', 2205568),
+    ('Bhaskar Lalwani', 2205460),
+    ('Mohit Gupta', 2205569),
+    ('Ishaan Mukherjee', 2205557),
+    ('Aniruddha Mukherjee', 2205533)
+]
 
-print("Database and table created successfully!")
+# Insert multiple students using executemany
+cursor.executemany('INSERT INTO students (name, rollnum) VALUES (?, ?)', students)
+
+# Commit the changes and close the connection
 conn.commit()
 conn.close()
