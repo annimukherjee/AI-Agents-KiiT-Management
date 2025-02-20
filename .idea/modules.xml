@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/agent-app.iml" filepath="$PROJECT_DIR$/.idea/agent-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/AI-Agents-KiiT-Management.iml" filepath="$PROJECT_DIR$/.idea/AI-Agents-KiiT-Management.iml" />
     </modules>
   </component>
 </project>
