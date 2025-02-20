@@ -11,7 +11,7 @@ load_dotenv()
 
 # Configure the Google Generative AI client
 genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
-model = genai.GenerativeModel('gemini-1.5-pro')
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 # Step 1: Connect to Gmail and fetch emails with "[BONAFIDE]" in the subject
 def fetch_bonafide_emails(username, password):
