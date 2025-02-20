@@ -12,6 +12,8 @@ Currently `bonafide-agent` checkes my emails for emails with subject [BONAFIDE],
 - NOC Generation
 - Bonafide Certificate Generation
 - Wi-Fi password reset (ISHAAN)
+- Rank Certficate
+- Scholarship Certification (Check CGPA & Check Attendance)
 
 
 ### Placement Activites
@@ -19,11 +21,12 @@ Currently `bonafide-agent` checkes my emails for emails with subject [BONAFIDE],
 - KIIT Kareer Placement PDF’s summaries (PDF)
 
 ### Tutor Mentor
-- Leave Cert 
-- Scheduling G-Meet to meet Mentees one a week
+- Leave Cert (not seeing much value) 
+- Scheduling G-Meet to meet Mentees one a week (mentor will give slots, we assume all students will be free post 6pm)
 
 ### Academic Activities
-- Academic Calendar
+- Academic Calendar 
 - Examination schedule
-- Emailing agent (access to college mail ids)
+- Holiday List
+
 
