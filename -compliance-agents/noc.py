@@ -1,0 +1,1 @@
+# this script will be for noc generation
