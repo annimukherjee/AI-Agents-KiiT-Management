@@ -6,6 +6,14 @@ import os
 from email.header import decode_header
 from dotenv import load_dotenv
 import google.generativeai as genai  # Import the Google Generative AI client
+import smtplib
+from email.message import EmailMessage
+import mimetypes
+from email.utils import parseaddr
+
+# For PDF generation using ReportLab
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
 
 load_dotenv()
 
@@ -96,6 +104,42 @@ def check_student_in_db(rollnum):
     conn.close()
     return result[0] if result else None
 
+# New Function: Generate a PDF Bonafide Certificate
+def generate_pdf(name, rollnum, output_path):
+    c = canvas.Canvas(output_path, pagesize=letter)
+    c.setTitle("BONAFIDE CERT")
+    # Prepare the certificate content
+    text = f"{name} with {rollnum} is a Bonafide student of KIIT University"
+    c.drawString(100, 750, text)
+    c.save()
+    print(f"PDF generated at: {output_path}")
+
+# New Function: Send an email with the PDF attached
+def send_email_with_attachment(sender, recipient, subject, body, attachment_path):
+    msg = EmailMessage()
+    msg["Subject"] = subject
+    msg["From"] = sender
+    msg["To"] = recipient
+    msg.set_content(body)
+    
+    # Read and attach the PDF file
+    with open(attachment_path, "rb") as f:
+        file_data = f.read()
+    mime_type, _ = mimetypes.guess_type(attachment_path)
+    if mime_type is None:
+        mime_type = "application/octet-stream"
+    maintype, subtype = mime_type.split("/", 1)
+    
+    msg.add_attachment(file_data, maintype=maintype, subtype=subtype, filename=os.path.basename(attachment_path))
+    
+    # Connect to the SMTP server (here using Gmail's SMTP server with SSL)
+    smtp_server = "smtp.gmail.com"
+    smtp_port = 465
+    with smtplib.SMTP_SSL(smtp_server, smtp_port) as smtp:
+        smtp.login(sender, os.environ.get("EMAIL_PASSWORD"))
+        smtp.send_message(msg)
+    print(f"Email sent with attachment {attachment_path} to {recipient}.")
+
 # Main orchestration
 def main():
     username = os.environ.get("EMAIL")
@@ -123,6 +167,18 @@ def main():
             verified_name = check_student_in_db(rollnum)
             if verified_name:
                 print(f"Verification: Student '{verified_name}' found in the database.")
+                
+                # Generate the PDF Bonafide Certificate
+                pdf_filename = f"{rollnum}_bonafide.pdf"
+                generate_pdf(verified_name, rollnum, pdf_filename)
+                
+                # Extract the sender's email address from the original email
+                sender_email = parseaddr(msg.get("From"))[1]
+                
+                # Prepare email details to send the certificate
+                email_subject = "Bonafide Certificate"
+                email_body = "Please find attached your Bonafide Certificate."
+                send_email_with_attachment(username, sender_email, email_subject, email_body, pdf_filename)
             else:
                 print("Verification: Student not found in the database.")
         else:
