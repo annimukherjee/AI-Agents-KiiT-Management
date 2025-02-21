@@ -56,6 +56,6 @@ E0000 00:00:1740166256.580221 25203767 init.cc:232] grpc_wait_for_shutdown_with_
 
 Proof of it working and sending the email:
 
-<im<img src="https://github.com/user-attachments/assets/0d78b95b-a5b3-4054-9d38-21c7aac461b0" width="90%">
+<img src="https://github.com/user-attachments/assets/0d78b95b-a5b3-4054-9d38-21c7aac461b0" width="90%">
 
 
