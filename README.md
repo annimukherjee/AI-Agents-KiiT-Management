@@ -5,8 +5,8 @@ Contains code to make AI agents for KIIT
 
 
 ### Compliance
-- NOC Generation [DONE]
-- Bonafide Certificate Generation
+- NOC Generation [(dummy done)In progress , have to add some criteria to be selected by the dept.]
+- Bonafide Certificate Generation [(dummy done)In progress , have to add some criteria to be selected by the dept.]
 - Wi-Fi password reset (ISHAAN)
 - Rank Certficate
 - Scholarship Certification (Check CGPA & Check Attendance)
