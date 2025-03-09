@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import {Link} from "react-router-dom";
+import One from "./one";
+import Two from "./two";
 
 function VerificationButton() {
     const [isLoading, setIsLoading] = useState(false);
@@ -23,7 +27,6 @@ function VerificationButton() {
             <button onClick={verifyBonafide} disabled={isLoading}>
                 {isLoading ? 'Processing...' : 'Verify Bonafide Email'}
             </button>
-
             {result && <p>{result}</p>}
         </div>
     );
@@ -31,9 +34,24 @@ function VerificationButton() {
 
 export default function MyApp() {
     return (
-        <div>
-            <h1>Bonafide generation</h1>
-            <VerificationButton />
+        <div style={{ display: 'flex', height: '100vh' }}>
+            {/* Sidebar */}
+            <Sidebar>
+                <Menu>
+                    <SubMenu label="Navigation">
+                        <MenuItem>Student</MenuItem>
+                        <MenuItem>Guy</MenuItem>
+                    </SubMenu>
+                    <MenuItem>Bonafide generation</MenuItem>
+                    <MenuItem>some sort of generation</MenuItem>
+                </Menu>
+            </Sidebar>
+
+            {/* Main Content */}
+            <div style={{ flex: 1, padding: '20px' }}>
+                <h1>Bonafide generation</h1>
+                <VerificationButton />
+            </div>
         </div>
     );
 }
