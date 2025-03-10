@@ -1,4 +1,3 @@
-imaplib
 email
 re
 sqlite3
@@ -10,3 +9,16 @@ mimetypes
 reportlab
 fastapi
 uvicorn
+requests
+beautifulsoup4
+pandas
+easyocr
+transformers
+agno
+openai
+pypdf
+groq
+lancedb
+pdf2image
+fitz
+pymupdf

@@ -1,0 +1,20 @@
+## Mid-Semester Exam Schedule - Spring 2025
+
+| Date       | Time       | Course Name                               | Course Code | Exam Type |
+|------------|------------|-------------------------------------------|-------------|------------|
+| 28/02/2025 | 03:30 PM - 05:00 PM | Universal Human Values                  | HS30401     | Regular    |
+| 28/02/2025 | 03:30 PM - 05:00 PM | Artificial Intelligence                  | CS30002     | Regular    |
+| 28/02/2025 | 03:30 PM - 05:00 PM | Data Science and Analytics               | CS30004     | Regular    |
+| 01/03/2025 | 03:30 PM - 05:00 PM | Wireless Mobile Communication            | EC30002     | Regular    |
+| 01/03/2025 | 03:30 PM - 05:00 PM | ARM and Advanced Microprocessors          | EC30007     | Regular    |
+| 01/03/2025 | 03:30 PM - 05:00 PM | Machine Learning                         | CS31002     | Regular    |
+| 03/03/2025 | 03:30 PM - 05:00 PM | Block Chain                              | CS40012     | Regular    |
+| 03/03/2025 | 03:30 PM - 05:00 PM | Compilers                               | CS30006     | Regular    |
+| 03/03/2025 | 03:30 PM - 05:00 PM | Cloud Computing                          | CS30010     | Regular    |
+| 03/03/2025 | 03:30 PM - 05:00 PM | Software Project Management              | CS30036     | Regular    |
+| 04/03/2025 | 03:30 PM - 05:00 PM | Cloud Computing                          | CS30010     | Regular    |
+| 04/03/2025 | 03:30 PM - 05:00 PM | Data Mining and Data Warehousing         | CS30013     | Regular    |
+| 06/03/2025 | 03:30 PM - 05:00 PM | Open Elective-II (Course Name Missing) |             | Regular    |
+
+
+**Note:**  Some course names are listed without a specific course code.  The "Open Elective-II" entry lacks a course name.  The provided text does not offer a way to resolve this missing information.  Also, branch specifics (CSE, IT, CSCE, CSSE) have been omitted from the table for brevity and to avoid redundancy since the course code usually implies the branch.
