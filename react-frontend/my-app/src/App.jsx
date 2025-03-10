@@ -1,57 +1,40 @@
 import { useState } from 'react';
-import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import {Link} from "react-router-dom";
-import One from "./one";
+import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Bonafide from "./one";
 import Two from "./two";
-
-function VerificationButton() {
-    const [isLoading, setIsLoading] = useState(false);
-    const [result, setResult] = useState(null);
-
-    const verifyBonafide = async () => {
-        setIsLoading(true);
-
-        try {
-            const response = await fetch('http://localhost:8000/verify-bonafide');
-            const data = await response.json();
-            setResult(data.message);
-        } catch (err) {
-            setResult('Error connecting to server');
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
-    return (
-        <div>
-            <button onClick={verifyBonafide} disabled={isLoading}>
-                {isLoading ? 'Processing...' : 'Verify Bonafide Email'}
-            </button>
-            {result && <p>{result}</p>}
-        </div>
-    );
-}
 
 export default function MyApp() {
     return (
-        <div style={{ display: 'flex', height: '100vh' }}>
-            {/* Sidebar */}
-            <Sidebar>
-                <Menu>
-                    <SubMenu label="Navigation">
-                        <MenuItem>Student</MenuItem>
-                        <MenuItem>Guy</MenuItem>
-                    </SubMenu>
-                    <MenuItem>Bonafide generation</MenuItem>
-                    <MenuItem>some sort of generation</MenuItem>
-                </Menu>
-            </Sidebar>
+        <BrowserRouter>
+            <div style={{ display: 'flex', height: '100vh' }}>
+                <Sidebar>
+                    <Menu
+                        menuItemStyles={{
+                            button: {
+                                // the active class will be added automatically by react router
+                                // so we can use it to style the active menu item
+                                [`&.active`]: {
+                                    backgroundColor: '#13395e',
+                                    color: '#b6c8d9',
+                                },
+                            },
+                        }}
+                    >
+                        <MenuItem component={<Link to="/bonafide" />}>Bonafide generation</MenuItem>
+                        <MenuItem component={<Link to="/some-generation" />}>Some sort of generation</MenuItem>
+                    </Menu>
+                </Sidebar>
 
-            {/* Main Content */}
-            <div style={{ flex: 1, padding: '20px' }}>
-                <h1>Bonafide generation</h1>
-                <VerificationButton />
+                {/* Main Content */}
+                <div style={{ flex: 1, padding: '20px' }}>
+                    <Routes>
+                        <Route path="/" element={<h1>Welcome to the Management Dashboard!</h1>} />
+                        <Route path="/bonafide" element={<Bonafide />} />
+                        <Route path="/some-generation" element={<Two />} />
+                    </Routes>
+                </div>
             </div>
-        </div>
+        </BrowserRouter>
     );
 }
