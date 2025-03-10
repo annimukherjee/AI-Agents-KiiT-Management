@@ -1,0 +1,12 @@
+imaplib
+email
+re
+sqlite3
+os
+python-dotenv
+google-generativeai
+smtplib
+mimetypes
+reportlab
+fastapi
+uvicorn

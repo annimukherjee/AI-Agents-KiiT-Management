@@ -1,73 +1,205 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.app-header {
+  background-color: #4CAF50; /* Changed to light green */
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.sidebar {
-  width: 250px;
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-right: 1px solid #dee2e6;
-  height: 100vh;
-}
-
-.sidebar.sticky {
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
-.sidebar h3 {
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Added text shadow for elegance */
+}
+
+/* Sidebar Styles */
+.sidebar-container {
+  margin-top: 60px;
+  height: calc(100vh - 60px);
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar-header {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-header p {
+  font-weight: bold;
+  color: #2E7D32; /* Darker green */
+  margin: 0;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-top: 60px;
+  margin-left: 270px;
+  transition: margin-left 0.3s;
+  background-color: #F9FFF9; /* Very light green */
+  height: calc(100vh - 60px);
+  overflow: auto;
+}
+
+.main-content.sidebar-collapsed {
+  margin-left: 80px;
+}
+
+/* Welcome Card */
+.welcome-card {
+  text-align: center;
+  margin-top: 40px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.welcome-card h1 {
+  color: #2E7D32; /* Darker green */
+}
+
+/* Material UI inspired card design */
+.material-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 20px;
   margin-bottom: 20px;
 }
 
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
+.material-card h2 {
+  color: #2E7D32; /* Darker green */
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #E8F5E9; /* Light green border */
 }
 
-.sidebar ul li {
-  margin-bottom: 10px;
+/* Form controls with Material Design look */
+.form-control {
+  margin-bottom: 16px;
 }
 
-.sidebar ul li a {
-  text-decoration: none;
-  color: #495057;
+.form-control label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
 }
 
-.sidebar ul li a:hover {
-  color: #007bff;
+.form-control input,
+.form-control select,
+.form-control textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control input:focus,
+.form-control select:focus,
+.form-control textarea:focus {
+  border-color: #4CAF50; /* Light green */
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2); /* Light green shadow */
+  outline: none;
+}
+
+/* Material Design inspired button */
+.button {
+  background-color: #4CAF50; /* Light green */
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.button:hover {
+  background-color: #388E3C; /* Medium green */
+}
+
+.button:active {
+  background-color: #2E7D32; /* Darker green */
+}
+
+.button.secondary {
+  background-color: transparent;
+  color: #4CAF50; /* Light green */
+  border: 1px solid #4CAF50; /* Light green */
+}
+
+.button.secondary:hover {
+  background-color: rgba(76, 175, 80, 0.08); /* Very light green */
+}
+
+/* Section headers */
+.section-header {
+  color: #2E7D32; /* Darker green */
+  border-left: 4px solid #4CAF50; /* Light green */
+  padding-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+/* Status indicators */
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.success {
+  background-color: #E8F5E9; /* Very light green */
+  color: #2E7D32; /* Darker green */
+}
+
+.status-badge.pending {
+  background-color: #FFF8E1; /* Light amber */
+  color: #FF8F00; /* Amber */
+}
+
+.status-badge.error {
+  background-color: #FFEBEE; /* Light red */
+  color: #C62828; /* Red */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 1.2rem;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+  
+  .sidebar-container {
+    position: fixed;
+    z-index: 999;
+  }
 }
