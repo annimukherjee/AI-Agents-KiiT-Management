@@ -1,6 +1,11 @@
 import os
+import imaplib
+import email
+import pickle
+import re
 import base64
-import random
+from email.header import decode_header
+from dotenv import load_dotenv
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -8,116 +13,111 @@ from googleapiclient.discovery import build
 from agno.agent import Agent
 from agno.models.google import Gemini
 
-SCOPES = ['https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/gmail.send']
+# Load environment variables
+load_dotenv()
 
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAHuF_cNqsC6hz130fCVZK_q3wK2gEJ9wo"
-os.environ["AGNO_API_KEY"] = "ag-jEv-abiR-dN74Y0WXi_F1xYTVT8pf7CF-rvy9cb1kdg"
+SCOPES = [
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/userinfo.email",
+    "https://www.googleapis.com/auth/userinfo.profile",
+    "openid"
+]
+CLIENT_SECRET_FILE = "client_secret_433401284352-evlh7ld266o648beaude1h9bumnajatq.apps.googleusercontent.com.json"
 
-def authenticate_gmail():
+# Initialize Gemini AI Model
+gemini_model = Gemini(id="gemini-2.0-flash-thinking-exp-1219")
+agent = Agent(model=gemini_model, markdown=True)
+
+def get_gmail_credentials():
+    """Authenticate the user via OAuth and return valid credentials."""
     creds = None
-    if os.path.exists('token.json'):
-        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
-    
+
+    # Load previously saved credentials
+    if os.path.exists("token.pickle"):
+        with open("token.pickle", "rb") as token:
+            creds = pickle.load(token)
+
+    # If no valid credentials, get new ones
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRET_FILE, SCOPES)
             creds = flow.run_local_server(port=0)
-        
-        with open('token.json', 'w') as token:
-            token.write(creds.to_json())
 
-    service = build('gmail', 'v1', credentials=creds)
-    return service
+        # Save credentials for future use
+        with open("token.pickle", "wb") as token:
+            pickle.dump(creds, token)
 
+    return creds
 
-def get_email_body(payload):
-    body = ""
-    if 'parts' in payload:
-        for part in payload['parts']:
-            if part['mimeType'] == 'text/plain' and 'body' in part:
-                body = part['body'].get('data', '')
-                break
-    else:
-        body = payload['body'].get('data', '')
+def get_authenticated_email(creds):
+    """Retrieve the authenticated email securely."""
+    if creds.id_token and "email" in creds.id_token:
+        return creds.id_token["email"]
 
-    if body:
-        return base64.urlsafe_b64decode(body).decode('utf-8')
-    return "No body content found."
-
-
-def extract_relevant_info(email_content):
-    agent = Agent(model=Gemini(id="gemini-2.0-flash-thinking-exp-1219"))
-    task = (
-        f"Extract the following details from the email: Name, Roll Number, and Reset Information.\n\n"
-        f"Email Content: {email_content}"
-    )
-    
     try:
-        print("Running agent to extract info...")
-        response = agent.run(task)
-        if response is None:
-            return "Error: Agent returned no response. Check your model or API key."
-        if not isinstance(response, str):
-            return "Error: Unexpected response format from agent."
-        return response
+        service = build("oauth2", "v2", credentials=creds)
+        user_info = service.userinfo().get().execute()
+        return user_info.get("email")
     except Exception as e:
-        return f"Error while extracting info: {str(e)}"
+        print(f"Error fetching user email: {e}")
+        return None
 
+def generate_oauth2_string(username, access_token):
+    """Generate OAuth2 authentication string for IMAP login."""
+    auth_string = f"user={username}\x01auth=Bearer {access_token}\x01\x01"
+    return base64.b64encode(auth_string.encode()).decode()
 
-def generate_random_code():
-    return str(random.randint(100000, 999999))
-
-
-def send_acknowledgment(service, recipient):
-    reset_code = generate_random_code()
-    message_body = (
-        f"From: me\n"
-        f"To: {recipient}\n"
-        f"Subject: Acknowledgment - WIFI RESET\n\n"
-        f"Your email has been acknowledged!\n\n"
-        f"Here is your reset code: {reset_code}\n\n"
-        f"Best,\nSupport Team"
-    )
+def fetch_wifi_reset_emails():
+    """Fetch emails with the subject 'WIFI RESET' using OAuth authentication."""
+    creds = get_gmail_credentials()
     
-    message = {
-        'raw': base64.urlsafe_b64encode(message_body.encode("utf-8")).decode("utf-8")
-    }
-    service.users().messages().send(userId='me', body=message).execute()
-    print(f"Acknowledgment sent to {recipient} with reset code {reset_code}")
+    # Get authenticated user's email
+    email_address = get_authenticated_email(creds)
+    if not email_address:
+        print("Error: Could not retrieve the authenticated email.")
+        return []
 
+    try:
+        imap_server = imaplib.IMAP4_SSL("imap.gmail.com")
+        oauth2_string = generate_oauth2_string(email_address, creds.token)
+        imap_server.authenticate("XOAUTH2", lambda x: oauth2_string)
+        imap_server.select("inbox")
 
-def fetch_wifi_reset_emails(service):
-    results = service.users().messages().list(userId='me', q='subject:"WIFI RESET" -in:sent').execute()
-    messages = results.get('messages', [])
+        status, messages = imap_server.search(None, 'ALL')
+        if status != "OK":
+            print("No matching emails found.")
+            return []
 
-    if not messages:
-        print("No WIFI RESET emails found.")
+        email_ids = messages[0].split()
+        emails = []
+        for email_id in email_ids:
+            res, msg_data = imap_server.fetch(email_id, "(RFC822)")
+            if res != "OK":
+                continue
+            raw_email = msg_data[0][1]
+            msg = email.message_from_bytes(raw_email)
+            emails.append(msg)
+
+        imap_server.logout()
+        return emails
+
+    except Exception as e:
+        print(f"Error fetching emails: {e}")
+        return []
+
+def main():
+    """Main function to authenticate, fetch, and summarize WiFi reset emails."""
+    emails = fetch_wifi_reset_emails()
+    if not emails:
+        print("No WiFi reset emails found.")
         return
 
-    for msg in messages:
-        msg_id = msg['id']
-        message = service.users().messages().get(userId='me', id=msg_id).execute()
-
-        payload = message['payload']
-        headers = payload['headers']
-        sender = None
-
-        for header in headers:
-            if header['name'] == 'Subject':
-                print(f"Subject: {header['value']}")
-            if header['name'] == 'From':
-                sender = header['value']
-
-        body = get_email_body(payload)
-        print(f"Email content: {body}")
-
-        if sender:
-            print("Sending acknowledgment with reset code...")
-            send_acknowledgment(service, sender)
-
+    print(f"Found {len(emails)} emails with 'WIFI RESET'.")
+    for idx, msg in enumerate(emails):
+        subject = decode_header(msg["Subject"])[0][0]
+        print(f"\n📩 **Email Subject:** {subject}")
 
 if __name__ == "__main__":
-    service = authenticate_gmail()
-    fetch_wifi_reset_emails(service)
+    main()
