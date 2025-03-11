@@ -40,7 +40,7 @@ We will have a Dummy Student DB with the Names, CGPAs and Attendance (consider o
 
 ### Tutor Mentor
 - Leave Cert
-  - <img width="100" alt="image" src="https://github.com/user-attachments/assets/0b16848f-530a-42df-91bb-b8a09a153bc2" />
+  - <img width="250" alt="image" src="https://github.com/user-attachments/assets/0b16848f-530a-42df-91bb-b8a09a153bc2" />
 
 - Scheduling G-Meet to meet Mentees one a week (mentor will give slots, we assume all students will be free post 6pm)
   - Should be simple to build. 
