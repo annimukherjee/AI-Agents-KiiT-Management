@@ -7,12 +7,13 @@ from agno.models.groq import Groq
 from agno.vectordb.lancedb import LanceDb, SearchType
 from dotenv import load_dotenv
 from fastapi import APIRouter
+from pydantic import BaseModel
 
 load_dotenv()
 
 router = APIRouter(
-    prefix="/placement",  # Optional: adds this prefix to all routes
-    tags=["placement"],   # Optional: for API documentation grouping
+    prefix="/placement",  # Adds this prefix to all routes
+    tags=["placement"],   # For API documentation grouping
 )
 
 # --- Environment Variable Check ---
@@ -47,7 +48,7 @@ class HFEmbedder:
         return embedding, usage
 
 # --- Local PDF Setup ---
-pdf_directory = "C:/Users/KIIT/Documents/PlacementPDFs"
+pdf_directory = r"C:\Users\AmanDeep\OneDrive\Desktop\AI-Agents-KiiT-Management\-placement-agent\kiit-pdfs-kareer"
 
 embedder = HFEmbedder(model_name="bert-base-uncased")
 
@@ -63,7 +64,7 @@ knowledge_base = PDFKnowledgeBase(
     reader=PDFReader(chunk=True)
 )
 
-knowledge_base.load(recreate=False)
+knowledge_base.load(recreate=True)
 
 # --- Agent Initialization ---
 pdf_qa_agent = Agent(
@@ -101,16 +102,12 @@ def ask_agent(user_query):
 
     return response
 
+# --- API Endpoint for Chatbot --- 
+class BotRequest(BaseModel):
+    message: str
 
-
-# --- Example Usage ---
-## @router.get("/bot")
-async def placement(): 
-    while True:
-        user_input = input("\nYou: ")
-        if user_input.lower() in ["exit", "quit", "bye"]:
-            print("Goodbye!")
-            break
-        bot_response = ask_agent(user_input)
-        print("\nBot:", bot_response)
-
+@router.post("/bot")
+async def get_bot_response(request: BotRequest):
+    user_message = request.message
+    response_text = ask_agent(user_message)
+    return {"response": response_text}

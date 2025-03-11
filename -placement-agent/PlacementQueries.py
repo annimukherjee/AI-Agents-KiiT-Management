@@ -41,7 +41,7 @@ class HFEmbedder:
         return embedding, usage
 
 # --- Local PDF Setup ---
-pdf_directory = "C:/Users/KIIT/Documents/PlacementPDFs"
+pdf_directory = r"C:\Users\AmanDeep\OneDrive\Desktop\AI-Agents-KiiT-Management\-placement-agent\kiit-pdfs-kareer"
 
 embedder = HFEmbedder(model_name="bert-base-uncased")
 
