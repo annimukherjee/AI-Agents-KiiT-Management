@@ -1,5 +1,3 @@
-# this script will be for noc generation
-
 import imaplib
 import email
 import re
@@ -21,9 +19,7 @@ from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email import encoders
 
-# --------------------------------------------------------------------
-# 1. Load Environment Variables & Configure Generative AI
-# --------------------------------------------------------------------
+
 load_dotenv()
 
 EMAIL_ACCOUNT    = os.environ.get("EMAIL")            # e.g., "your_email@gmail.com"
@@ -37,14 +33,7 @@ SMTP_PORT        = 587
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel("gemini-1.5-flash")
 
-# --------------------------------------------------------------------
-# 2. Fetch Emails with "[NOC]" in Subject
-# --------------------------------------------------------------------
 def fetch_noc_emails(username, password):
-    """
-    Connect to Gmail via IMAP and return a list of email.message.Message objects
-    for emails that have "[NOC]" in the subject.
-    """
     imap_server = imaplib.IMAP4_SSL(IMAP_SERVER)
     imap_server.login(username, password)
     imap_server.select("inbox")
@@ -69,13 +58,7 @@ def fetch_noc_emails(username, password):
     imap_server.logout()
     return emails
 
-# --------------------------------------------------------------------
-# 3. Extract Plain Text from Email
-# --------------------------------------------------------------------
 def extract_plain_text_from_email(msg):
-    """
-    Extract the plain text content from the email.
-    """
     text_content = ""
     if msg.is_multipart():
         for part in msg.walk():
@@ -90,19 +73,7 @@ def extract_plain_text_from_email(msg):
         text_content = msg.get_payload(decode=True).decode(errors="ignore")
     return text_content
 
-# --------------------------------------------------------------------
-# 4. Use LLM (Gemini) to Extract Student Details (including CGPA)
-# --------------------------------------------------------------------
 def extract_student_info_with_llm(email_text):
-    """
-    Ask Gemini to extract the following fields exactly as separate lines:
-      Name: <NAME>
-      Roll Number: <ROLL>
-      From Date: <FROM_DATE>
-      To Date: <TO_DATE>
-      Pronoun: <PRONOUN>   (should be "his" or "her")
-      CGPA: <CGPA>
-    """
     prompt = f"""
     You are given an email from a student requesting an NOC.
     Please extract the following fields exactly as separate lines in the format shown:
@@ -122,10 +93,6 @@ def extract_student_info_with_llm(email_text):
     return result
 
 def parse_extraction_result(result_text):
-    """
-    Parse the LLM output to extract:
-      Name, Roll Number, From Date, To Date, Pronoun, and CGPA.
-    """
     name_match      = re.search(r"Name:\s*(.*)", result_text)
     roll_match      = re.search(r"Roll Number:\s*(.*)", result_text)
     from_date_match = re.search(r"From Date:\s*(.*)", result_text)
@@ -142,14 +109,8 @@ def parse_extraction_result(result_text):
 
     return name, rollnum, from_date, to_date, pronoun, cgpa
 
-# --------------------------------------------------------------------
-# 5. (Optional) Verify Student Info in Database
-# --------------------------------------------------------------------
+
 def check_student_in_db(rollnum):
-    """
-    Check if the student exists in the local SQLite database 'students.db'.
-    Expects a table 'students' with columns (rollnum, name).
-    """
     if not os.path.exists("students.db"):
         return None
     conn = sqlite3.connect("students.db")
@@ -159,23 +120,8 @@ def check_student_in_db(rollnum):
     conn.close()
     return result[0] if result else None
 
-# --------------------------------------------------------------------
-# 6. Generate the NOC PDF In-Memory (using io.BytesIO)
-# --------------------------------------------------------------------
+
 def generate_noc_pdf_in_memory(name, rollnum, from_date, to_date, pronoun, cgpa):
-    """
-    Generates a NOC PDF into an in-memory buffer using the following rules:
-      - Header: "KALINGA INSTITUTE OF INDUSTRIAL TECHNOLOGY"
-      - Actual current date on the "Dated:" line.
-      - Only one title: if pronoun is "his" then use "Mr.", if "her" then "Mrs."
-      - Replace <Institution/College> with "KIIT COLLEGE"
-      - Replace <college/institution> with "KIIT"
-      - Use performance descriptor based on CGPA:
-          > CGPA > 8.5: good
-          > CGPA > 7.5: satisfactory
-          > CGPA <= 7.5: unsatisfactory
-    Returns an io.BytesIO buffer with the PDF data.
-    """
     buffer = io.BytesIO()
     c = canvas.Canvas(buffer, pagesize=A4)
     width, height = A4
@@ -226,14 +172,7 @@ def generate_noc_pdf_in_memory(name, rollnum, from_date, to_date, pronoun, cgpa)
     buffer.seek(0)
     return buffer
 
-# --------------------------------------------------------------------
-# 7. Send the PDF via Email (using the in-memory PDF)
-# --------------------------------------------------------------------
 def send_noc_certificate(to_email, pdf_buffer, name):
-    """
-    Sends an email with the generated NOC PDF (from the in-memory buffer)
-    attached to the recipient's email address.
-    """
     msg = MIMEMultipart()
     msg["From"] = EMAIL_ACCOUNT
     msg["To"] = to_email
@@ -255,9 +194,6 @@ def send_noc_certificate(to_email, pdf_buffer, name):
     server.send_message(msg)
     server.quit()
 
-# --------------------------------------------------------------------
-# 8. Main Orchestration
-# --------------------------------------------------------------------
 def main():
     emails = fetch_noc_emails(EMAIL_ACCOUNT, EMAIL_PASSWORD)
     print(f"Fetched {len(emails)} emails with [NOC].")
