@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import Bonafide from "./one";
-import Two from "./two";
-import Chatbot from "./chatbot";
-
+import Bonafide from "./elements/bonafide";
+import Two from "./elements/noc";
+import Chatbot from "./elements/chatbot";
+import ScholarshipProcessor from './elements/scholarship';  
+import RankProcessor from './elements/rank';
+import AcademicCalendar from './elements/academic_calender';
+import HolidayList from './elements/holidays';
+import ExamSchedule from './elements/exams';
 // Custom MenuItem component to work with react-router
 const CustomMenuItem = ({ to, children }) => {
     return (
@@ -154,11 +158,12 @@ export default function MyApp() {
                         <Route path="/" element={
                             <div style={{
                                 textAlign: 'center',
-                                marginTop: '40px',
+                                margin: '40px auto',
                                 backgroundColor: 'white',
                                 padding: '30px',
                                 borderRadius: '8px',
-                                boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                                maxWidth: '800px'
                             }}>
                                 <h1 style={{ color: '#2E7D32' }}>Welcome to KIIT Management System</h1>
                                 <p>Please select an option from the sidebar to begin.</p>
@@ -166,15 +171,15 @@ export default function MyApp() {
                         } />
                         <Route path="/bonafide" element={<Bonafide />} />
                         <Route path="/noc-generation" element={<Two />} />
-                        <Route path="/rank-certificate" element={<Two />} />
-                        <Route path="/scholarship-certificate" element={<Two />} />
+                        <Route path="/rank-certificate" element={<RankProcessor />} />
+                        <Route path="/scholarship-certificate" element={<ScholarshipProcessor/>} />
                         <Route path="/kiit-events" element={<Two />} />
                         <Route path="/career-placements" element={<Two />} />
                         <Route path="/leave-certificate" element={<Two />} />
                         <Route path="/google-meet" element={<Two />} />
-                        <Route path="/academic-calendar" element={<Two />} />
-                        <Route path="/exam-schedule" element={<Two />} />
-                        <Route path="/holiday-list" element={<Two />} />
+                        <Route path="/academic-calendar" element={<AcademicCalendar />} />
+                        <Route path="/exam-schedule" element={<ExamSchedule />} />
+                        <Route path="/holiday-list" element={<HolidayList />} />
                         <Route path="/backlog-queries" element={<Two />} />
                         <Route path="/notices" element={<Two />} />
                         <Route path="/grievance" element={<Two />} />
