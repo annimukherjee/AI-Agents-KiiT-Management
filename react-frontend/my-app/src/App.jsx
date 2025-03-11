@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import Bonafide from "./one";
 import Two from "./two";
+import Chatbot from "./chatbot";
 
 // Custom MenuItem component to work with react-router
 const CustomMenuItem = ({ to, children }) => {
@@ -132,7 +133,7 @@ export default function MyApp() {
 
                             {/* SECTION 7: AI-BASED QUERY SYSTEM */}
                             <SubMenu label="AI QUERY SYSTEM" style={{ fontWeight: 'bold', color: '#2E7D32' }}>
-                                <CustomMenuItem to="/ai-chatbot">AI Chatbot</CustomMenuItem>
+                            <CustomMenuItem to="/ai-chatbot">AI Chatbot</CustomMenuItem>
                             </SubMenu>
                         </Menu>
                     </Sidebar>
@@ -180,7 +181,7 @@ export default function MyApp() {
                         <Route path="/placement-drives" element={<Two />} />
                         <Route path="/company-shortlists" element={<Two />} />
                         <Route path="/interview-guidance" element={<Two />} />
-                        <Route path="/ai-chatbot" element={<Two />} />
+                        <Route path="/ai-chatbot" element={<Chatbot />} />
                     </Routes>
                 </div>
             </div>

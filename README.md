@@ -25,8 +25,27 @@ We will have a Dummy Student DB with the Names, CGPAs and Attendance (consider o
    
     - Backend is Done. Some tweaks need to be made to the frontend. 
       
-- Wi-Fi password reset
-  - Ishaan is doing this. Ishaan, please update sub-points in a manner similar to the above.
+  
+- WiFi Reset Request Management
+    - Admin Panel Integration
+
+    - Access Admin’s email inbox.
+        Fetch all emails with [WIFI RESET] in the subject line.
+        Frontend Display
+
+    - Show the list of reset requests (plain text).
+        Include details like student ID, name, and request timestamp.
+        Action Buttons
+
+    - Admin can click a "Reset WiFi" button.
+        On click, trigger the backend to process the reset.
+        Email Confirmation
+        After reset, an automatic confirmation email is sent to the student.
+        Email content includes reset status and troubleshooting tips.
+  
+    - Current Status
+        Backend logic is complete.
+        Minor adjustments needed for frontend UI and email formatting.
     
 - Rank Certficate
   - Very similar to the above. 
