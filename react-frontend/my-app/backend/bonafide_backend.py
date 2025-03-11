@@ -18,7 +18,8 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from noc_frontend import router as noc_router
+from noc_backend import router as noc_router
+from Placement_backend import router as placement_router
 
 
 load_dotenv()
@@ -236,6 +237,7 @@ async def send_certificates(request: BonafideRequest):
         content={"message": f"Processed and sent {processed_count} certificates", "count": processed_count}
     )
 app.include_router(noc_router)
+app.include_router(placement_router)
 
 if __name__ == "__main__":
     # Run the FastAPI application using uvicorn

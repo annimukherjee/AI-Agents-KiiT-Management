@@ -17,7 +17,7 @@ function Chatbot() {
 
     try {
       // Call your Python backend here
-      const response = await fetch('http://localhost:8000/chat', {
+      const response = await fetch('http://localhost:8000/placement/bot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
