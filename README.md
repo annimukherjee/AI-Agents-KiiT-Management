@@ -20,9 +20,9 @@ Contains code to make AI agents for KIIT
 - Leave Cert (not seeing much value) 
 - Scheduling G-Meet to meet Mentees one a week (mentor will give slots, we assume all students will be free post 6pm)
 
-### Academic Activities
+### Academic Activities (agents done , frontend integration remaining!)
 - Academic Calendar 
-- Examination schedule
+- Examination schedule 
 - Holiday List
 
 
