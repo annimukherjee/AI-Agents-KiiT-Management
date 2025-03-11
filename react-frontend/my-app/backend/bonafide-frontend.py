@@ -1,5 +1,6 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+from typing import List, Optional
 import imaplib
 import email
 import re
@@ -18,18 +19,14 @@ from reportlab.pdfgen import canvas
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
-# For PDF generation using ReportLab
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
-
 load_dotenv()
 
 app = FastAPI()
 
-# Allow CORS for React frontend running on a different port
+# Allow CORS for React frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins for now (can be restricted to your frontend's origin later)
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -38,6 +35,17 @@ app.add_middleware(
 # Configure the Google Generative AI client
 genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
 model = genai.GenerativeModel('gemini-1.5-flash')
+
+# Data models for the API
+class StudentInfo(BaseModel):
+    name: str
+    rollnum: str
+    email: str
+    email_text: str
+    verified: bool
+
+class BonafideRequest(BaseModel):
+    students: List[StudentInfo]
 
 # Step 1: Connect to Gmail and fetch emails with "[BONAFIDE]" in the subject
 def fetch_bonafide_emails(username, password):
@@ -77,7 +85,7 @@ def extract_plain_text_from_email(msg):
         text_content = msg.get_payload(decode=True).decode(errors="ignore")
     return text_content
 
-# Step 3: Use Google's Generative AI LLM to extract Name and Roll Number from the email text.
+# Step 3: Use Google's Generative AI LLM to extract Name and Roll Number from the email text
 def extract_student_info_from_text(email_text):
     prompt = (
         "Extract and format exactly like this - Name: <student name>, Roll Number: <roll number>. "
@@ -86,7 +94,7 @@ def extract_student_info_from_text(email_text):
     )
     response = model.generate_content(prompt)
     result = response.text
-    print(f"Raw LLM output: {result}")  # Debug print
+    # print(f"Raw LLM output: {result}")  # Debug print
     return result
 
 def parse_extraction_result(result_text):
@@ -122,7 +130,7 @@ def check_student_in_db(rollnum):
     conn.close()
     return result[0] if result else None
 
-# New Function: Generate a PDF Bonafide Certificate
+# Generate a PDF Bonafide Certificate
 def generate_pdf(name, rollnum, output_path):
     c = canvas.Canvas(output_path, pagesize=letter)
     c.setTitle("BONAFIDE CERT")
@@ -132,7 +140,7 @@ def generate_pdf(name, rollnum, output_path):
     c.save()
     print(f"PDF generated at: {output_path}")
 
-# New Function: Send an email with the PDF attached
+# Send an email with the PDF attached
 def send_email_with_attachment(sender, recipient, subject, body, attachment_path):
     msg = EmailMessage()
     msg["Subject"] = subject
@@ -158,30 +166,73 @@ def send_email_with_attachment(sender, recipient, subject, body, attachment_path
         smtp.send_message(msg)
     print(f"Email sent with attachment {attachment_path} to {recipient}.")
 
-# Main orchestration
-class MessageResponse(BaseModel):
-    message: str
-
-@app.get("/verify-bonafide", response_model=MessageResponse)
-async def verify_bonafide():
+# New endpoint to fetch bonafide requests from emails
+@app.get("/fetch-bonafide-requests", response_model=List[StudentInfo])
+async def fetch_bonafide_requests():
     username = os.environ.get("EMAIL")
     password = os.environ.get("EMAIL_PASSWORD")
     emails = fetch_bonafide_emails(username, password)
 
     if not emails:
-        return JSONResponse(status_code=400, content={"message": "No emails found!"})
+        return []
 
-    for idx, msg in enumerate(emails):
+    students = []
+    for msg in emails:
         email_text = extract_plain_text_from_email(msg)
         extraction_result = extract_student_info_from_text(email_text)
         name, rollnum = parse_extraction_result(extraction_result)
-        verified_name = check_student_in_db(rollnum)
-        if verified_name:
-            pdf_filename = f"{rollnum}_bonafide.pdf"
-            generate_pdf(verified_name, rollnum, pdf_filename)
-            send_email_with_attachment(username, parseaddr(msg.get("From"))[1], "Bonafide Certificate", "Please find attached your Bonafide Certificate.", pdf_filename)
 
-    return JSONResponse(status_code=200, content={"message": "Bonafide certificate(s) generated and sent!"})
+        # Check if the student exists in the database
+        verified_name = check_student_in_db(rollnum)
+
+        students.append(
+            StudentInfo(
+                name=name or "Unknown",
+                rollnum=rollnum or "Unknown",
+                email=parseaddr(msg.get("From"))[1],
+                email_text=email_text[:200] + "..." if len(email_text) > 200 else email_text,
+                verified=verified_name is not None
+            )
+        )
+
+    return students
+
+# New endpoint to process and send certificates
+@app.post("/send-certificates")
+async def send_certificates(request: BonafideRequest):
+    username = os.environ.get("EMAIL")
+    password = os.environ.get("EMAIL_PASSWORD")
+
+    processed_count = 0
+
+    for student in request.students:
+        if not student.verified:
+            continue  # Skip unverified students
+
+        # Get the verified name from the database (more accurate than email extraction)
+        verified_name = check_student_in_db(student.rollnum)
+        if not verified_name:
+            continue
+
+        # Generate certificate
+        pdf_filename = f"{student.rollnum}_bonafide.pdf"
+        generate_pdf(verified_name, student.rollnum, pdf_filename)
+
+        # Send email with the certificate
+        send_email_with_attachment(
+            username,
+            student.email,
+            "Bonafide Certificate",
+            "Please find attached your Bonafide Certificate.",
+            pdf_filename
+        )
+
+        processed_count += 1
+
+    return JSONResponse(
+        status_code=200,
+        content={"message": f"Processed and sent {processed_count} certificates", "count": processed_count}
+    )
 
 if __name__ == "__main__":
     # Run the FastAPI application using uvicorn

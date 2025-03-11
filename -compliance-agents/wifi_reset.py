@@ -10,8 +10,8 @@ from agno.models.google import Gemini
 
 SCOPES = ['https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/gmail.send']
 
-os.environ["GOOGLE_API_KEY"] = ""
-os.environ["AGNO_API_KEY"] = ""
+os.environ["GOOGLE_API_KEY"] = "AIzaSyAHuF_cNqsC6hz130fCVZK_q3wK2gEJ9wo"
+os.environ["AGNO_API_KEY"] = "ag-jEv-abiR-dN74Y0WXi_F1xYTVT8pf7CF-rvy9cb1kdg"
 
 def authenticate_gmail():
     creds = None
