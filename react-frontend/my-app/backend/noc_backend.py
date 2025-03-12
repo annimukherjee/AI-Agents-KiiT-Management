@@ -18,7 +18,6 @@ from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email import encoders
 
-
 load_dotenv()
 
 EMAIL_ACCOUNT    = os.environ.get("EMAIL")            # e.g., "your_email@gmail.com"
@@ -29,8 +28,8 @@ SMTP_SERVER      = "smtp.gmail.com"
 SMTP_PORT        = 587
 
 router = APIRouter(
-    prefix="/noc",  # Optional: adds this prefix to all routes
-    tags=["noc"],   # Optional: for API documentation grouping
+    prefix="/noc",  # Routes under /noc
+    tags=["noc"],
 )
 
 # Configure Gemini
@@ -50,6 +49,7 @@ def fetch_noc_emails(username, password):
 
     email_ids = messages[0].split()
     emails = []
+    seen_message_ids = set()
 
     for email_id in email_ids:
         res, msg_data = imap_server.fetch(email_id, "(RFC822)")
@@ -57,6 +57,10 @@ def fetch_noc_emails(username, password):
             continue
         raw_email = msg_data[0][1]
         msg = email.message_from_bytes(raw_email)
+        msg_id = msg.get("Message-ID")
+        if msg_id in seen_message_ids:
+            continue
+        seen_message_ids.add(msg_id)
         emails.append(msg)
 
     imap_server.logout()
@@ -66,8 +70,7 @@ def extract_plain_text_from_email(msg):
     text_content = ""
     if msg.is_multipart():
         for part in msg.walk():
-            content_type = part.get_content_type()
-            if content_type == "text/plain":
+            if part.get_content_type() == "text/plain":
                 try:
                     text_content = part.get_payload(decode=True).decode(errors="ignore")
                 except Exception as e:
@@ -118,7 +121,7 @@ def check_student_in_db(rollnum):
         return None
     conn = sqlite3.connect("students.db")
     cursor = conn.cursor()
-    # Updated the column name from "rollnum" to "roll_no" as per the new DB structure.
+    # Use the correct column name 'roll_no'
     cursor.execute("SELECT name FROM students WHERE roll_no=?", (rollnum,))
     result = cursor.fetchone()
     conn.close()
@@ -132,10 +135,9 @@ def generate_noc_pdf_in_memory(name, rollnum, from_date, to_date, pronoun, cgpa)
     textobject.setTextOrigin(inch, height - inch)  # 1 inch margin
     textobject.setFont("Times-Roman", 12)
 
-    # Determine title from pronoun: "Mr." for his, "Mrs." for her, default to "Mr."
+    # Determine title based on pronoun
     title = "Mr." if pronoun == "his" else "Mrs." if pronoun == "her" else "Mr."
 
-    # Compute performance based on CGPA
     try:
         cgpa_val = float(cgpa)
     except:
@@ -147,7 +149,6 @@ def generate_noc_pdf_in_memory(name, rollnum, from_date, to_date, pronoun, cgpa)
     else:
         performance = "unsatisfactory"
 
-    # Current date for the "Dated:" line
     current_date = datetime.now().strftime("%Y-%m-%d")
 
     lines = [
@@ -184,7 +185,6 @@ def send_noc_certificate(to_email, pdf_buffer, name):
     body = f"Dear {name},\n\nPlease find attached your NOC Certificate.\n\nRegards,\nYour Institution"
     msg.attach(MIMEText(body, "plain"))
 
-    # Attach PDF from in-memory buffer
     part = MIMEBase("application", "octet-stream")
     part.set_payload(pdf_buffer.read())
     encoders.encode_base64(part)
@@ -197,42 +197,69 @@ def send_noc_certificate(to_email, pdf_buffer, name):
     server.send_message(msg)
     server.quit()
 
-@router.get("/generatenoc")
-async def process_noc():
+# GET endpoint to fetch NOC requests from emails
+@router.get("/fetch-noc-requests")
+async def fetch_noc_requests():
     emails = fetch_noc_emails(EMAIL_ACCOUNT, EMAIL_PASSWORD)
     print(f"Fetched {len(emails)} emails with [NOC].")
+    student_requests = []
+    seen_message_ids = set()
 
-    for idx, msg in enumerate(emails, start=1):
-        print(f"\nProcessing email {idx}...")
+    for msg in emails:
+        msg_id = msg.get("Message-ID")
+        if msg_id in seen_message_ids:
+            continue
+        seen_message_ids.add(msg_id)
 
-        # Extract sender (student) email
+        # Extract sender email
         from_header = msg.get("From", "")
         match = re.search(r"<(.+?)>", from_header)
         student_email = match.group(1) if match else from_header
 
         email_text = extract_plain_text_from_email(msg)
         if not email_text.strip():
-            print("No text content found in this email.")
             continue
 
-        # Use Gemini LLM to parse student info (including CGPA)
+        # Extract student info using LLM
         llm_output = extract_student_info_with_llm(email_text)
         name, rollnum, from_date, to_date, pronoun, cgpa = parse_extraction_result(llm_output)
         print(f"Extracted details => Name: {name}, Roll: {rollnum}, Period: {from_date} to {to_date}, Pronoun: {pronoun}, CGPA: {cgpa}")
 
-        # (Optional) Verify with database
         verified_name = check_student_in_db(rollnum)
+        verified = True if verified_name else False
         if verified_name:
-            print(f"DB Verification: Student '{verified_name}' found for roll '{rollnum}'.")
-        else:
-            print("No DB match found or DB not used. Proceeding without verification.")
+            name = verified_name
 
-        # Generate the NOC PDF into an in-memory buffer
-        pdf_buffer = generate_noc_pdf_in_memory(name, rollnum, from_date, to_date, pronoun, cgpa)
-        print("Generated in-memory PDF for NOC certificate.")
+        student_obj = {
+            "name": name if name else "Unknown",
+            "roll_no": rollnum if rollnum else "Unknown",
+            "email": student_email,
+            "email_text": email_text[:200] + "..." if len(email_text) > 200 else email_text,
+            "verified": verified,
+            "from_date": from_date,
+            "to_date": to_date,
+            "pronoun": pronoun,
+            "cgpa": cgpa
+        }
+        student_requests.append(student_obj)
 
-        # Send the PDF to the student's email
-        send_noc_certificate(student_email, pdf_buffer, name)
-        print(f"Sent NOC certificate to {student_email}")
+    return student_requests
 
-    return {"message": "NOC emails processed and certificates sent."}
+# POST endpoint to send NOC certificates for verified students
+@router.post("/send-noc-certificates")
+async def send_noc_certificates(request: list):
+    processed_count = 0
+    for student in request:
+        if not student.get("verified", False):
+            continue
+        name = student.get("name")
+        roll_no = student.get("roll_no")
+        from_date = student.get("from_date")
+        to_date = student.get("to_date")
+        pronoun = student.get("pronoun")
+        cgpa = student.get("cgpa")
+        email_addr = student.get("email")
+        pdf_buffer = generate_noc_pdf_in_memory(name, roll_no, from_date, to_date, pronoun, cgpa)
+        send_noc_certificate(email_addr, pdf_buffer, name)
+        processed_count += 1
+    return {"message": f"Processed and sent {processed_count} certificates", "count": processed_count}

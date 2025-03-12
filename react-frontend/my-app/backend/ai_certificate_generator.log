@@ -204,3 +204,4 @@ Roll Number: 2205967
 
 2025-03-12 17:29:41,746 - INFO - Parsed name: AMANDEEP, roll number: 2205967
 2025-03-12 17:29:41,747 - INFO - Student 2205967 is not eligible for scholarship (CGPA: 8.6, Attendance: 67.12)
+2025-03-12 21:50:41,612 - INFO - Created certificates directory: certificates
