@@ -4,11 +4,13 @@ function BonafideProcessor() {
     const [isLoading, setIsLoading] = useState(false);
     const [isSending, setIsSending] = useState(false);
     const [students, setStudents] = useState([]);
+    const [selectedStudents, setSelectedStudents] = useState({});
     const [message, setMessage] = useState(null);
 
     const fetchBonafideRequests = async () => {
         setIsLoading(true);
         setMessage(null);
+        setSelectedStudents({});
 
         try {
             const response = await fetch('http://localhost:8000/fetch-bonafide-requests');
@@ -19,6 +21,13 @@ function BonafideProcessor() {
 
             const data = await response.json();
             setStudents(data);
+
+            // Initialize selected state for all students (default to false)
+            const initialSelection = {};
+            data.forEach(student => {
+                initialSelection[student.rollnum] = false;
+            });
+            setSelectedStudents(initialSelection);
 
             if (data.length === 0) {
                 setMessage({
@@ -42,13 +51,30 @@ function BonafideProcessor() {
         }
     };
 
-    const sendCertificates = async () => {
-        // Only send for verified students
-        const verifiedStudents = students.filter(student => student.verified);
+    const handleSelectStudent = (rollnum) => {
+        setSelectedStudents(prev => ({
+            ...prev,
+            [rollnum]: !prev[rollnum]
+        }));
+    };
 
-        if (verifiedStudents.length === 0) {
+    const handleSelectAll = (checked) => {
+        const updatedSelection = {};
+        students.forEach(student => {
+            updatedSelection[student.rollnum] = checked;
+        });
+        setSelectedStudents(updatedSelection);
+    };
+
+    const sendCertificates = async () => {
+        // Filter students based on selection and verification
+        const studentsToSend = students.filter(
+            student => selectedStudents[student.rollnum] && student.verified
+        );
+
+        if (studentsToSend.length === 0) {
             setMessage({
-                text: 'No verified students to process',
+                text: 'No verified students selected to process',
                 isError: true
             });
             return;
@@ -63,7 +89,7 @@ function BonafideProcessor() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ students: verifiedStudents }),
+                body: JSON.stringify({ students: studentsToSend }),
             });
 
             if (!response.ok) {
@@ -86,6 +112,14 @@ function BonafideProcessor() {
         }
     };
 
+    // Count selected verified students
+    const selectedVerifiedCount = students.filter(
+        student => selectedStudents[student.rollnum] && student.verified
+    ).length;
+
+    // Count selected total students
+    const selectedCount = Object.values(selectedStudents).filter(Boolean).length;
+
     return (
         <div className="material-card">
             <h2 style={{ color: "#2E7D32" }}>Bonafide Certificate System</h2>
@@ -107,10 +141,10 @@ function BonafideProcessor() {
                 <button
                     className="button"
                     onClick={sendCertificates}
-                    disabled={isSending || students.length === 0}
+                    disabled={isSending || selectedVerifiedCount === 0}
                     style={{ backgroundColor: "#4CAF50" }} // Green
                 >
-                    {isSending ? 'Sending...' : 'Send Certificates'}
+                    {isSending ? 'Sending...' : `Send Certificates (${selectedVerifiedCount})`}
                 </button>
             </div>
 
@@ -129,6 +163,17 @@ function BonafideProcessor() {
             {students.length > 0 && (
                 <div className="student-table-container">
                     <h3 style={{ color: "#2E7D32" }}>Found Requests</h3>
+                    <div style={{ marginBottom: '10px' }}>
+                        <label style={{ display: 'flex', alignItems: 'center', fontSize: '0.9em', color: '#555' }}>
+                            <input
+                                type="checkbox"
+                                checked={selectedCount === students.length}
+                                onChange={(e) => handleSelectAll(e.target.checked)}
+                                style={{ marginRight: '5px' }}
+                            />
+                            Select All ({selectedCount}/{students.length} selected)
+                        </label>
+                    </div>
                     <table style={{
                         width: '100%',
                         borderCollapse: 'collapse',
@@ -144,6 +189,7 @@ function BonafideProcessor() {
                             <th style={cellStyle}>Email</th>
                             <th style={cellStyle}>Email Content</th>
                             <th style={cellStyle}>Status</th>
+                            <th style={cellStyle}>Select</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -172,8 +218,8 @@ function BonafideProcessor() {
                                             borderRadius: '12px',
                                             fontSize: '0.85em'
                                         }}>
-                                                Verified
-                                            </span>
+                                            Verified
+                                        </span>
                                     ) : (
                                         <span style={{
                                             color: '#F44336',
@@ -183,9 +229,18 @@ function BonafideProcessor() {
                                             borderRadius: '12px',
                                             fontSize: '0.85em'
                                         }}>
-                                                Not Verified
-                                            </span>
+                                            Not Verified
+                                        </span>
                                     )}
+                                </td>
+                                <td style={cellStyle}>
+                                    <input
+                                        type="checkbox"
+                                        checked={!!selectedStudents[student.rollnum]}
+                                        onChange={() => handleSelectStudent(student.rollnum)}
+                                        disabled={!student.verified}
+                                        style={{ cursor: student.verified ? 'pointer' : 'not-allowed' }}
+                                    />
                                 </td>
                             </tr>
                         ))}
