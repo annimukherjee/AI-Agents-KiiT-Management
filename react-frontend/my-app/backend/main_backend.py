@@ -20,7 +20,8 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from noc_backend import router as noc_router
 from Placement_backend import router as placement_router
-
+from rank_backend import router as rank_router
+from scholarship_backend import router as scholarship_router
 
 load_dotenv()
 
@@ -128,7 +129,8 @@ def parse_extraction_result(result_text):
 def check_student_in_db(rollnum):
     conn = sqlite3.connect('students.db')
     cursor = conn.cursor()
-    cursor.execute("SELECT name FROM students WHERE rollnum=?", (rollnum,))
+    # Updated column name from rollnum to roll_no
+    cursor.execute("SELECT name FROM students WHERE roll_no=?", (rollnum,))
     result = cursor.fetchone()
     conn.close()
     return result[0] if result else None
@@ -236,8 +238,11 @@ async def send_certificates(request: BonafideRequest):
         status_code=200,
         content={"message": f"Processed and sent {processed_count} certificates", "count": processed_count}
     )
+
 app.include_router(noc_router)
 app.include_router(placement_router)
+app.include_router(rank_router)
+app.include_router(scholarship_router)
 
 if __name__ == "__main__":
     # Run the FastAPI application using uvicorn

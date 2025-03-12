@@ -1,0 +1,242 @@
+2025-03-12 01:01:31,861 - INFO - Created certificates directory: scholarship_certificates
+2025-03-12 01:01:31,871 - INFO - Schedule package not found. Attempting to install...
+2025-03-12 01:01:39,785 - INFO - Schedule package installed successfully.
+2025-03-12 01:01:39,789 - INFO - Starting AI-powered scholarship certificate generator
+2025-03-12 01:01:41,545 - INFO - Found 5 new scholarship certificate requests
+2025-03-12 01:01:41,547 - ERROR - Error updating scholarship eligibility: no such table: scholarship_criteria
+2025-03-12 01:01:42,010 - INFO - Processing scholarship request from noreply@dare2compete.news, Subject: Scholarship worth INR 4 Crores- Apply Now!!
+2025-03-12 01:01:42,013 - INFO - Using AI to extract student information
+2025-03-12 01:01:42,686 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:01:42,687 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:01:42,687 - WARNING - Could not extract roll number from email from noreply@dare2compete.news
+2025-03-12 01:01:47,302 - INFO - Processing scholarship request from hello@yocket.in, Subject: Webinar: Scholarship for Your Masters happening tomorrow!
+2025-03-12 01:01:47,302 - INFO - Using AI to extract student information
+2025-03-12 01:01:47,886 - INFO - AI extraction result: Please provide the email text.
+
+2025-03-12 01:01:47,886 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:01:47,886 - WARNING - Could not extract roll number from email from hello@yocket.in
+2025-03-12 01:01:52,399 - INFO - Processing scholarship request from hello@yocket.in, Subject: =?UTF-8?Q?Don=E2=80=99t_Miss_Today=E2=80=99s_Webinar_on?=
+ =?UTF-8?Q?_Scholarship_for_Your_Masters?=
+2025-03-12 01:01:52,400 - INFO - Using AI to extract student information
+2025-03-12 01:01:53,112 - INFO - AI extraction result: Please provide the email text.  I need the email text to extract the requested information.
+
+2025-03-12 01:01:53,113 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:01:53,113 - WARNING - Could not extract roll number from email from hello@yocket.in
+2025-03-12 01:01:58,054 - INFO - Processing scholarship request from notifications@ivies.in, Subject: [Masterclass] $100k Scholarship Journey + IB Hacks
+2025-03-12 01:01:58,054 - INFO - Using AI to extract student information
+2025-03-12 01:01:58,745 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:01:58,745 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:01:58,745 - WARNING - Could not extract roll number from email from notifications@ivies.in
+2025-03-12 01:02:03,358 - INFO - Processing scholarship request from newsletter@mail.portfoliobox.net, Subject: Apply for the Portfoliobox Scholarship
+2025-03-12 01:02:03,358 - INFO - Using AI to extract student information
+2025-03-12 01:02:03,967 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:02:03,967 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:02:03,967 - WARNING - Could not extract roll number from email from newsletter@mail.portfoliobox.net
+2025-03-12 01:02:08,068 - INFO - Processing complete
+2025-03-12 01:38:08,403 - INFO - Created certificates directory: scholarship_certificates
+2025-03-12 01:38:08,407 - INFO - Starting AI-powered scholarship certificate generator
+2025-03-12 01:38:10,123 - INFO - Found 11 scholarship certificate requests
+2025-03-12 01:38:10,125 - INFO - Adding scholarship_eligible column to students table
+2025-03-12 01:38:10,128 - INFO - Creating scholarship_criteria table
+2025-03-12 01:38:10,133 - INFO - Updated scholarship eligibility for 5 students
+2025-03-12 01:38:10,612 - INFO - Processing scholarship request from team@unacademy.com, Subject: Aman, start your week with a scholarship for IIT JEE
+2025-03-12 01:38:10,612 - INFO - Using AI to extract student information
+2025-03-12 01:38:12,627 - INFO - AI extraction result: Please provide the email text.  I need the email text to extract the student's name and roll number.
+
+2025-03-12 01:38:12,627 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:38:12,628 - WARNING - Could not extract roll number from email from team@unacademy.com
+2025-03-12 01:38:16,568 - INFO - Processing scholarship request from team@unacademy.com, Subject: Aman, start your week with a scholarship for CBSE Class 11
+2025-03-12 01:38:16,568 - INFO - Using AI to extract student information
+2025-03-12 01:38:17,694 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:38:17,694 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:38:17,694 - WARNING - Could not extract roll number from email from team@unacademy.com
+2025-03-12 01:38:20,461 - INFO - Processing scholarship request from team@unacademy.com, Subject: Aman, get your scholarship now at the IIT JEE Combat
+2025-03-12 01:38:20,461 - INFO - Using AI to extract student information
+2025-03-12 01:38:21,098 - INFO - AI extraction result: Please provide the email text. I need the email text to extract the student's name and roll number.
+
+2025-03-12 01:38:21,098 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:38:21,098 - WARNING - Could not extract roll number from email from team@unacademy.com
+2025-03-12 01:38:23,870 - INFO - Processing scholarship request from team@unacademy.com, Subject: Aman, get your scholarship now at the CBSE Class 11 Combat
+2025-03-12 01:38:23,870 - INFO - Using AI to extract student information
+2025-03-12 01:38:24,508 - INFO - AI extraction result: Please provide the email text.  I need the email text to extract the student's name and roll number.
+
+2025-03-12 01:38:24,508 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:38:24,508 - WARNING - Could not extract roll number from email from team@unacademy.com
+2025-03-12 01:38:27,672 - INFO - Processing scholarship request from alerts@updates.vedantu.com, Subject: Good Job on the Test! Get a Scholarship on the Next Test
+2025-03-12 01:38:27,672 - INFO - Using AI to extract student information
+2025-03-12 01:38:28,622 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:38:28,622 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:38:28,622 - WARNING - Could not extract roll number from email from alerts@updates.vedantu.com
+2025-03-12 01:38:32,441 - INFO - Processing scholarship request from noreply@dare2compete.news, Subject: Scholarship worth INR 4 Crores- Apply Now!!
+2025-03-12 01:38:32,441 - INFO - Using AI to extract student information
+2025-03-12 01:38:33,000 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:38:33,000 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:38:33,000 - WARNING - Could not extract roll number from email from noreply@dare2compete.news
+2025-03-12 01:38:36,464 - INFO - Processing scholarship request from hello@yocket.in, Subject: Webinar: Scholarship for Your Masters happening tomorrow!
+2025-03-12 01:38:36,464 - INFO - Using AI to extract student information
+2025-03-12 01:38:37,092 - INFO - AI extraction result: Please provide the email text.  I need the email text to extract the student's name and roll number.
+
+2025-03-12 01:38:37,092 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:38:37,092 - WARNING - Could not extract roll number from email from hello@yocket.in
+2025-03-12 01:38:39,830 - INFO - Processing scholarship request from hello@yocket.in, Subject: =?UTF-8?Q?Don=E2=80=99t_Miss_Today=E2=80=99s_Webinar_on?=
+ =?UTF-8?Q?_Scholarship_for_Your_Masters?=
+2025-03-12 01:38:39,830 - INFO - Using AI to extract student information
+2025-03-12 01:38:40,510 - INFO - AI extraction result: Please provide the email text.  I need the email text to extract the student's name and roll number.
+
+2025-03-12 01:38:40,510 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:38:40,510 - WARNING - Could not extract roll number from email from hello@yocket.in
+2025-03-12 01:38:43,240 - INFO - Processing scholarship request from notifications@ivies.in, Subject: [Masterclass] $100k Scholarship Journey + IB Hacks
+2025-03-12 01:38:43,240 - INFO - Using AI to extract student information
+2025-03-12 01:38:43,846 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:38:43,846 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:38:43,846 - WARNING - Could not extract roll number from email from notifications@ivies.in
+2025-03-12 01:38:47,142 - INFO - Processing scholarship request from hi@courses.codingninjas.com, Subject: =?utf-8?B?U2Nob2xhcnNoaXAgb3Bwb3J0dW5pdHkhIEpvaW4gQWR2YW5jZWQg?=
+	=?utf-8?B?RFNBLCBUcmFpbmluZyBjdW0gSW50ZXJuc2hpcCBQcm9ncmFtIGJ5IEUmSUNU?=
+	=?utf-8?B?wqBJSVTCoEd1d2FoYXRp?=
+2025-03-12 01:38:47,142 - INFO - Using AI to extract student information
+2025-03-12 01:38:48,047 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:38:48,047 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:38:48,047 - WARNING - Could not extract roll number from email from hi@courses.codingninjas.com
+2025-03-12 01:38:50,830 - INFO - Processing scholarship request from newsletter@mail.portfoliobox.net, Subject: Apply for the Portfoliobox Scholarship
+2025-03-12 01:38:50,830 - INFO - Using AI to extract student information
+2025-03-12 01:38:51,388 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:38:51,388 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:38:51,388 - WARNING - Could not extract roll number from email from newsletter@mail.portfoliobox.net
+2025-03-12 01:38:54,814 - INFO - Processing complete
+2025-03-12 01:40:26,742 - INFO - Starting AI-powered scholarship certificate generator
+2025-03-12 01:40:28,547 - INFO - Found 16 scholarship certificate requests
+2025-03-12 01:40:28,548 - INFO - Updated scholarship eligibility for 5 students
+2025-03-12 01:40:29,022 - INFO - Processing scholarship request from team@unacademy.com, Subject: Aman, start your week with a scholarship for IIT JEE
+2025-03-12 01:40:29,023 - INFO - Using AI to extract student information
+2025-03-12 01:40:30,085 - INFO - AI extraction result: Please provide the email text.  I need the email text to extract the student's name and roll number.
+
+2025-03-12 01:40:30,085 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:40:30,085 - WARNING - Could not extract roll number from email from team@unacademy.com
+2025-03-12 01:40:32,910 - INFO - Processing scholarship request from team@unacademy.com, Subject: Aman, start your week with a scholarship for CBSE Class 11
+2025-03-12 01:40:32,910 - INFO - Using AI to extract student information
+2025-03-12 01:40:34,012 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:40:34,012 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:40:34,012 - WARNING - Could not extract roll number from email from team@unacademy.com
+2025-03-12 01:40:37,717 - INFO - Processing scholarship request from team@unacademy.com, Subject: Aman, get your scholarship now at the IIT JEE Combat
+2025-03-12 01:40:37,718 - INFO - Using AI to extract student information
+2025-03-12 01:40:38,343 - INFO - AI extraction result: Please provide the email text.  I need the email text to extract the requested information.
+
+2025-03-12 01:40:38,344 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:40:38,344 - WARNING - Could not extract roll number from email from team@unacademy.com
+2025-03-12 01:40:41,921 - INFO - Processing scholarship request from team@unacademy.com, Subject: Aman, get your scholarship now at the CBSE Class 11 Combat
+2025-03-12 01:40:41,921 - INFO - Using AI to extract student information
+2025-03-12 01:40:42,508 - INFO - AI extraction result: Please provide the email text.  I need the email text to extract the requested information.
+
+2025-03-12 01:40:42,508 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:40:42,508 - WARNING - Could not extract roll number from email from team@unacademy.com
+2025-03-12 01:40:46,032 - INFO - Processing scholarship request from alerts@updates.vedantu.com, Subject: Good Job on the Test! Get a Scholarship on the Next Test
+2025-03-12 01:40:46,033 - INFO - Using AI to extract student information
+2025-03-12 01:40:47,309 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:40:47,309 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:40:47,309 - WARNING - Could not extract roll number from email from alerts@updates.vedantu.com
+2025-03-12 01:40:51,427 - INFO - Processing scholarship request from noreply@dare2compete.news, Subject: Scholarship worth INR 4 Crores- Apply Now!!
+2025-03-12 01:40:51,428 - INFO - Using AI to extract student information
+2025-03-12 01:40:52,083 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:40:52,084 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:40:52,084 - WARNING - Could not extract roll number from email from noreply@dare2compete.news
+2025-03-12 01:40:54,867 - INFO - Processing scholarship request from hello@yocket.in, Subject: Webinar: Scholarship for Your Masters happening tomorrow!
+2025-03-12 01:40:54,868 - INFO - Using AI to extract student information
+2025-03-12 01:40:55,478 - INFO - AI extraction result: Please provide the email text. I need the email text to extract the student's name and roll number.
+
+2025-03-12 01:40:55,478 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:40:55,478 - WARNING - Could not extract roll number from email from hello@yocket.in
+2025-03-12 01:40:58,298 - INFO - Processing scholarship request from hello@yocket.in, Subject: =?UTF-8?Q?Don=E2=80=99t_Miss_Today=E2=80=99s_Webinar_on?=
+ =?UTF-8?Q?_Scholarship_for_Your_Masters?=
+2025-03-12 01:40:58,298 - INFO - Using AI to extract student information
+2025-03-12 01:40:58,908 - INFO - AI extraction result: Please provide the email text. I need the email text to extract the student's name and roll number.
+
+2025-03-12 01:40:58,908 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:40:58,908 - WARNING - Could not extract roll number from email from hello@yocket.in
+2025-03-12 01:41:01,718 - INFO - Processing scholarship request from notifications@ivies.in, Subject: [Masterclass] $100k Scholarship Journey + IB Hacks
+2025-03-12 01:41:01,718 - INFO - Using AI to extract student information
+2025-03-12 01:41:02,376 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:41:02,376 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:41:02,376 - WARNING - Could not extract roll number from email from notifications@ivies.in
+2025-03-12 01:41:06,004 - INFO - Processing scholarship request from hi@courses.codingninjas.com, Subject: =?utf-8?B?U2Nob2xhcnNoaXAgb3Bwb3J0dW5pdHkhIEpvaW4gQWR2YW5jZWQg?=
+	=?utf-8?B?RFNBLCBUcmFpbmluZyBjdW0gSW50ZXJuc2hpcCBQcm9ncmFtIGJ5IEUmSUNU?=
+	=?utf-8?B?wqBJSVTCoEd1d2FoYXRp?=
+2025-03-12 01:41:06,004 - INFO - Using AI to extract student information
+2025-03-12 01:41:06,736 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:41:06,736 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:41:06,736 - WARNING - Could not extract roll number from email from hi@courses.codingninjas.com
+2025-03-12 01:41:10,074 - INFO - Processing scholarship request from newsletter@mail.portfoliobox.net, Subject: Apply for the Portfoliobox Scholarship
+2025-03-12 01:41:10,074 - INFO - Using AI to extract student information
+2025-03-12 01:41:10,615 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:41:10,615 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:41:10,616 - WARNING - Could not extract roll number from email from newsletter@mail.portfoliobox.net
+2025-03-12 01:41:14,131 - INFO - Processing scholarship request from support@yocket.in, Subject: We have received your request - [SCHOLARSHIP] Student Information Not
+ Found
+2025-03-12 01:41:14,131 - INFO - Using AI to extract student information
+2025-03-12 01:41:14,667 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:41:14,667 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:41:14,667 - WARNING - Could not extract roll number from email from support@yocket.in
+2025-03-12 01:41:18,452 - INFO - Processing scholarship request from support@yocket.in, Subject: Ticket Received - [SCHOLARSHIP] Student Information Not Found
+2025-03-12 01:41:18,452 - INFO - Using AI to extract student information
+2025-03-12 01:41:18,942 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:41:18,942 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:41:18,942 - WARNING - Could not extract roll number from email from support@yocket.in
+2025-03-12 01:41:21,830 - INFO - Processing scholarship request from support@yocket.in, Subject: Ticket Received - [SCHOLARSHIP] Student Information Not Found
+2025-03-12 01:41:21,831 - INFO - Using AI to extract student information
+2025-03-12 01:41:22,374 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:41:22,375 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:41:22,375 - WARNING - Could not extract roll number from email from support@yocket.in
+2025-03-12 01:41:25,145 - INFO - Processing scholarship request from support@yocket.in, Subject: We have received your request - [SCHOLARSHIP] Student Information Not
+ Found
+2025-03-12 01:41:25,145 - INFO - Using AI to extract student information
+2025-03-12 01:41:25,745 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:41:25,745 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:41:25,745 - WARNING - Could not extract roll number from email from support@yocket.in
+2025-03-12 01:41:29,076 - INFO - Processing scholarship request from amantechwiz@gmail.com, Subject: [SCHOLARSHIP]
+2025-03-12 01:41:29,076 - INFO - Using AI to extract student information
+2025-03-12 01:41:29,638 - INFO - AI extraction result: Name: AMANDEEP
+Roll Number: 2205967
+
+2025-03-12 01:41:29,638 - INFO - Parsed name: AMANDEEP, roll number: 2205967
+2025-03-12 01:41:29,644 - INFO - Scholarship certificate generated successfully: scholarship_certificates\2205967_scholarship_certificate.pdf
+2025-03-12 01:41:32,303 - INFO - Scholarship certificate sent to amantechwiz@gmail.com for student 2205967
+2025-03-12 01:41:32,303 - INFO - Certificate saved at: scholarship_certificates\2205967_scholarship_certificate.pdf
+2025-03-12 01:41:32,304 - ERROR - Error updating certificate status: CHECK constraint failed: scholarship_certificate IN ('Yes', 'No')
+2025-03-12 01:41:32,606 - INFO - Processing complete

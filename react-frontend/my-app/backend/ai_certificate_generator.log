@@ -1,0 +1,206 @@
+2025-03-12 16:00:15,152 - INFO - Created certificates directory: certificates
+2025-03-12 17:00:58,970 - ERROR - Error updating student ranks: CHECK constraint failed: rank_generation IN ('Yes', 'No')
+2025-03-12 17:00:58,971 - INFO - Starting AI-powered rank certificate generator
+2025-03-12 17:01:01,409 - INFO - Found 12 rank certificate requests
+2025-03-12 17:01:07,001 - ERROR - Error updating student ranks: database is locked
+2025-03-12 17:01:07,618 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_Kullthegreat_is_live_now=3A_DAILY_MORNING_FUN_RAN?=
+	=?UTF-8?Q?K_PUSH_GRIND_=7C_NEW_BGMI_STREAM_TIME?=
+2025-03-12 17:01:07,621 - INFO - Using AI to extract student information
+2025-03-12 17:01:10,006 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:01:10,007 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:01:10,007 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 17:01:14,923 - INFO - Processing request from store-news@amazon.in, Subject: A guide to get a top 50 rank...
+2025-03-12 17:01:14,924 - INFO - Using AI to extract student information
+2025-03-12 17:01:15,613 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:01:15,614 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:01:15,614 - WARNING - Could not extract roll number from email from store-news@amazon.in
+2025-03-12 17:01:19,853 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_Kullthegreat_is_live_now=3A_PUBG_NEW_STATE_=3A_SENS?=
+	=?UTF-8?Q?I_SET_NOW_RANK_PUSH_WITH_NEW_TEAM?=
+2025-03-12 17:01:19,853 - INFO - Using AI to extract student information
+2025-03-12 17:01:20,559 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:01:20,559 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:01:20,559 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 17:01:25,889 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_First_Event_in_Nox_Vision_?=
+	=?UTF-8?Q?Soon_Join_to_Participate_=7C_Rank_push_Continues_in_CODM_=7C_AGE?=
+	=?UTF-8?Q?NTHP_=7C=21discord?=
+2025-03-12 17:01:25,889 - INFO - Using AI to extract student information
+2025-03-12 17:01:26,518 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:01:26,518 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:01:26,518 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 17:01:31,487 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_Soft_Launch_me_RANK_PUSH_k?=
+	=?UTF-8?Q?on_kon_karega=3F_ft=2E_Cod_Mobile_BR_=7C_AGENTHP?=
+2025-03-12 17:01:31,487 - INFO - Using AI to extract student information
+2025-03-12 17:01:32,229 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:01:32,230 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:01:32,230 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 17:01:36,313 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_RANK_PUSH=21_Stimmed_up_and_?=
+	=?UTF-8?Q?ready_to_burn_=7C_Apex_Legends_Mobile_=7C_AGENTHP?=
+2025-03-12 17:01:36,313 - INFO - Using AI to extract student information
+2025-03-12 17:01:36,946 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:01:36,946 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:01:36,947 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 17:01:41,600 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_Gaming_Merchant_Mobile_is_live_now=3A_Apex_Legend?=
+	=?UTF-8?Q?s_Mobile_GLOBAL_LAUNCH_Is_LIVE=21_=2D_The_Grind_To_Apex_Predator?=
+	=?UTF-8?Q?_Rank_Begins?=
+2025-03-12 17:01:41,601 - INFO - Using AI to extract student information
+2025-03-12 17:01:42,371 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:01:42,372 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:01:42,372 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 17:01:46,935 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_Season_2_Rank_Grind_Begins?=
+	=?UTF-8?Q?_=7C_Apex_Legends_Mobile_=7C_AgentHP?=
+2025-03-12 17:01:46,936 - INFO - Using AI to extract student information
+2025-03-12 17:01:47,696 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:01:47,697 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:01:47,697 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 17:01:52,542 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_ZOIDZILLA_is_live_now=3A_SEASON_2_PREDATOR_RANK_G?=
+	=?UTF-8?Q?RIND_BEGINS_=7C_Apex_Legends_Mobile_=7C_ZOIDZILLA?=
+2025-03-12 17:01:52,542 - INFO - Using AI to extract student information
+2025-03-12 17:01:53,197 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:01:53,197 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:01:53,197 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 17:01:57,723 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_Season_2_Master_Rank_Grind?=
+	=?UTF-8?Q?_=7C_Apex_Legends_Mobile_=7C_AgentHP?=
+2025-03-12 17:01:57,724 - INFO - Using AI to extract student information
+2025-03-12 17:01:58,348 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:01:58,349 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:01:58,349 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 17:02:03,439 - INFO - Processing request from code360@emailer.codingninjas.in, Subject: =?utf-8?B?8J+aqCBBdHRlbnRpb24gQW1hbkRlZXAsIFlvdXIgTGVhZGVyYm9h?=
+	=?utf-8?B?cmQgUmFuayBpcyBkb3du4qyH77iPIEFjdCBOb3ch?=
+2025-03-12 17:02:03,439 - INFO - Using AI to extract student information
+2025-03-12 17:02:04,796 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:02:04,797 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:02:04,797 - WARNING - Could not extract roll number from email from code360@emailer.codingninjas.in
+2025-03-12 17:02:09,693 - INFO - Processing request from amantechwiz@gmail.com, Subject: [RANK]
+2025-03-12 17:02:09,694 - INFO - Using AI to extract student information
+2025-03-12 17:02:10,429 - INFO - AI extraction result: Name: Amandeep
+Roll Number: 2205967
+
+2025-03-12 17:02:10,429 - INFO - Parsed name: Amandeep, roll number: 2205967
+2025-03-12 17:02:10,449 - INFO - Certificate generated successfully: certificates\2205967_rank_certificate.pdf
+2025-03-12 17:02:14,726 - INFO - Certificate sent to amantechwiz@gmail.com for student 2205967
+2025-03-12 17:02:14,726 - ERROR - Error updating rank_generation status: CHECK constraint failed: rank_generation IN ('Yes', 'No')
+2025-03-12 17:02:14,727 - INFO - Certificate saved at: certificates\2205967_rank_certificate.pdf
+2025-03-12 17:02:15,446 - INFO - Processing complete
+2025-03-12 17:08:59,871 - INFO - Created certificates directory: scholarship_certificates
+2025-03-12 17:20:12,745 - INFO - Created certificates directory: certificates
+2025-03-12 17:27:49,921 - INFO - Found 14 scholarship certificate requests
+2025-03-12 17:27:49,925 - INFO - Adding scholarship_eligible column to students table
+2025-03-12 17:27:49,932 - INFO - Updated scholarship eligibility for 5 students
+2025-03-12 17:27:55,078 - INFO - Processing scholarship request from team@unacademy.com, Subject: Aman, start your week with a scholarship for IIT JEE
+2025-03-12 17:27:55,078 - INFO - Using AI to extract student information
+2025-03-12 17:27:57,729 - INFO - AI extraction result: Please provide the email text.  I need the email text to extract the student's name and roll number.
+
+2025-03-12 17:27:57,730 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:27:57,730 - WARNING - Could not extract roll number from email from team@unacademy.com
+2025-03-12 17:28:06,878 - INFO - Processing scholarship request from team@unacademy.com, Subject: Aman, start your week with a scholarship for CBSE Class 11
+2025-03-12 17:28:06,878 - INFO - Using AI to extract student information
+2025-03-12 17:28:08,561 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:28:08,562 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:28:08,562 - WARNING - Could not extract roll number from email from team@unacademy.com
+2025-03-12 17:28:22,519 - INFO - Processing scholarship request from team@unacademy.com, Subject: Aman, get your scholarship now at the IIT JEE Combat
+2025-03-12 17:28:22,519 - INFO - Using AI to extract student information
+2025-03-12 17:28:23,306 - INFO - AI extraction result: Please provide the email text.  I need the email text to extract the requested information.
+
+2025-03-12 17:28:23,306 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:28:23,306 - WARNING - Could not extract roll number from email from team@unacademy.com
+2025-03-12 17:28:30,700 - INFO - Processing scholarship request from team@unacademy.com, Subject: Aman, get your scholarship now at the CBSE Class 11 Combat
+2025-03-12 17:28:30,700 - INFO - Using AI to extract student information
+2025-03-12 17:28:31,703 - INFO - AI extraction result: Please provide the email text.
+
+2025-03-12 17:28:31,704 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:28:31,704 - WARNING - Could not extract roll number from email from team@unacademy.com
+2025-03-12 17:28:38,412 - INFO - Processing scholarship request from alerts@updates.vedantu.com, Subject: Good Job on the Test! Get a Scholarship on the Next Test
+2025-03-12 17:28:38,412 - INFO - Using AI to extract student information
+2025-03-12 17:28:39,690 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:28:39,690 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:28:39,690 - WARNING - Could not extract roll number from email from alerts@updates.vedantu.com
+2025-03-12 17:28:47,643 - INFO - Processing scholarship request from noreply@dare2compete.news, Subject: Scholarship worth INR 4 Crores- Apply Now!!
+2025-03-12 17:28:47,643 - INFO - Using AI to extract student information
+2025-03-12 17:28:48,307 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:28:48,308 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:28:48,308 - WARNING - Could not extract roll number from email from noreply@dare2compete.news
+2025-03-12 17:28:55,666 - INFO - Processing scholarship request from hello@yocket.in, Subject: Webinar: Scholarship for Your Masters happening tomorrow!
+2025-03-12 17:28:55,666 - INFO - Using AI to extract student information
+2025-03-12 17:28:56,590 - INFO - AI extraction result: Please provide the email text.  I need the email text to extract the student's name and roll number.
+
+2025-03-12 17:28:56,590 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:28:56,590 - WARNING - Could not extract roll number from email from hello@yocket.in
+2025-03-12 17:29:03,326 - INFO - Processing scholarship request from hello@yocket.in, Subject: =?UTF-8?Q?Don=E2=80=99t_Miss_Today=E2=80=99s_Webinar_on?=
+ =?UTF-8?Q?_Scholarship_for_Your_Masters?=
+2025-03-12 17:29:03,327 - INFO - Using AI to extract student information
+2025-03-12 17:29:04,124 - INFO - AI extraction result: Please provide the email text. I need the email text to extract the student's name and roll number.
+
+2025-03-12 17:29:04,124 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:29:04,124 - WARNING - Could not extract roll number from email from hello@yocket.in
+2025-03-12 17:29:10,116 - INFO - Processing scholarship request from notifications@ivies.in, Subject: [Masterclass] $100k Scholarship Journey + IB Hacks
+2025-03-12 17:29:10,117 - INFO - Using AI to extract student information
+2025-03-12 17:29:10,834 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:29:10,835 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:29:10,835 - WARNING - Could not extract roll number from email from notifications@ivies.in
+2025-03-12 17:29:16,838 - INFO - Processing scholarship request from hi@courses.codingninjas.com, Subject: =?utf-8?B?U2Nob2xhcnNoaXAgb3Bwb3J0dW5pdHkhIEpvaW4gQWR2YW5jZWQg?=
+	=?utf-8?B?RFNBLCBUcmFpbmluZyBjdW0gSW50ZXJuc2hpcCBQcm9ncmFtIGJ5IEUmSUNU?=
+	=?utf-8?B?wqBJSVTCoEd1d2FoYXRp?=
+2025-03-12 17:29:16,838 - INFO - Using AI to extract student information
+2025-03-12 17:29:17,679 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:29:17,679 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:29:17,680 - WARNING - Could not extract roll number from email from hi@courses.codingninjas.com
+2025-03-12 17:29:23,006 - INFO - Processing scholarship request from newsletter@mail.portfoliobox.net, Subject: Apply for the Portfoliobox Scholarship
+2025-03-12 17:29:23,007 - INFO - Using AI to extract student information
+2025-03-12 17:29:23,824 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:29:23,825 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:29:23,825 - WARNING - Could not extract roll number from email from newsletter@mail.portfoliobox.net
+2025-03-12 17:29:29,253 - INFO - Processing scholarship request from support@yocket.in, Subject: Re: [SCHOLARSHIP] Student Information Not Found
+2025-03-12 17:29:29,253 - INFO - Using AI to extract student information
+2025-03-12 17:29:29,960 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 17:29:29,961 - INFO - Parsed name: None, roll number: None
+2025-03-12 17:29:29,961 - WARNING - Could not extract roll number from email from support@yocket.in
+2025-03-12 17:29:35,190 - INFO - Processing scholarship request from amantechwiz@gmail.com, Subject: [SCHOLARSHIP]
+2025-03-12 17:29:35,190 - INFO - Using AI to extract student information
+2025-03-12 17:29:35,883 - INFO - AI extraction result: Name: amandeep
+Roll Number: 2205967
+
+2025-03-12 17:29:35,884 - INFO - Parsed name: amandeep, roll number: 2205967
+2025-03-12 17:29:35,885 - INFO - Student 2205967 is not eligible for scholarship (CGPA: 8.6, Attendance: 67.12)
+2025-03-12 17:29:41,087 - INFO - Processing scholarship request from amantechwiz@gmail.com, Subject: [SCHOLARSHIP]
+2025-03-12 17:29:41,087 - INFO - Using AI to extract student information
+2025-03-12 17:29:41,746 - INFO - AI extraction result: Name: AMANDEEP
+Roll Number: 2205967
+
+2025-03-12 17:29:41,746 - INFO - Parsed name: AMANDEEP, roll number: 2205967
+2025-03-12 17:29:41,747 - INFO - Student 2205967 is not eligible for scholarship (CGPA: 8.6, Attendance: 67.12)

@@ -113,17 +113,16 @@ def parse_extraction_result(result_text):
 
     return name, rollnum, from_date, to_date, pronoun, cgpa
 
-
 def check_student_in_db(rollnum):
     if not os.path.exists("students.db"):
         return None
     conn = sqlite3.connect("students.db")
     cursor = conn.cursor()
-    cursor.execute("SELECT name FROM students WHERE rollnum=?", (rollnum,))
+    # Updated the column name from "rollnum" to "roll_no" as per the new DB structure.
+    cursor.execute("SELECT name FROM students WHERE roll_no=?", (rollnum,))
     result = cursor.fetchone()
     conn.close()
     return result[0] if result else None
-
 
 def generate_noc_pdf_in_memory(name, rollnum, from_date, to_date, pronoun, cgpa):
     buffer = io.BytesIO()
@@ -237,4 +236,3 @@ async def process_noc():
         print(f"Sent NOC certificate to {student_email}")
 
     return {"message": "NOC emails processed and certificates sent."}
-

@@ -11,7 +11,7 @@ function RankProcessor() {
         setMessage(null);
 
         try {
-            const response = await fetch('http://localhost:8000/fetch-rank-requests');
+            const response = await fetch('http://localhost:8000/ranking/rankchecker');
 
             if (!response.ok) {
                 throw new Error(`Server responded with status: ${response.status}`);

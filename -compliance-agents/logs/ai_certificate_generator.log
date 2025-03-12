@@ -1,0 +1,201 @@
+2025-03-12 00:44:28,438 - INFO - Created certificates directory: certificates
+2025-03-12 00:44:28,451 - ERROR - Error updating student ranks: no such column: id
+2025-03-12 00:44:28,451 - INFO - Starting AI-powered rank certificate generator
+2025-03-12 00:44:30,294 - INFO - Found 7 new rank certificate requests
+2025-03-12 00:44:30,295 - ERROR - Error updating student ranks: no such column: id
+2025-03-12 00:44:30,772 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_RANK_PUSH=21_Stimmed_up_and_?=
+	=?UTF-8?Q?ready_to_burn_=7C_Apex_Legends_Mobile_=7C_AGENTHP?=
+2025-03-12 00:44:30,772 - INFO - Using AI to extract student information
+2025-03-12 00:44:32,973 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 00:44:32,973 - INFO - Parsed name: None, roll number: None
+2025-03-12 00:44:32,974 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 00:44:37,565 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_Gaming_Merchant_Mobile_is_live_now=3A_Apex_Legend?=
+	=?UTF-8?Q?s_Mobile_GLOBAL_LAUNCH_Is_LIVE=21_=2D_The_Grind_To_Apex_Predator?=
+	=?UTF-8?Q?_Rank_Begins?=
+2025-03-12 00:44:37,566 - INFO - Using AI to extract student information
+2025-03-12 00:44:38,243 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 00:44:38,244 - INFO - Parsed name: None, roll number: None
+2025-03-12 00:44:38,244 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 00:44:42,178 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_Season_2_Rank_Grind_Begins?=
+	=?UTF-8?Q?_=7C_Apex_Legends_Mobile_=7C_AgentHP?=
+2025-03-12 00:44:42,178 - INFO - Using AI to extract student information
+2025-03-12 00:44:42,851 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 00:44:42,851 - INFO - Parsed name: None, roll number: None
+2025-03-12 00:44:42,852 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 00:44:47,465 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_ZOIDZILLA_is_live_now=3A_SEASON_2_PREDATOR_RANK_G?=
+	=?UTF-8?Q?RIND_BEGINS_=7C_Apex_Legends_Mobile_=7C_ZOIDZILLA?=
+2025-03-12 00:44:47,466 - INFO - Using AI to extract student information
+2025-03-12 00:44:48,072 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 00:44:48,073 - INFO - Parsed name: None, roll number: None
+2025-03-12 00:44:48,073 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 00:44:51,413 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_Season_2_Master_Rank_Grind?=
+	=?UTF-8?Q?_=7C_Apex_Legends_Mobile_=7C_AgentHP?=
+2025-03-12 00:44:51,413 - INFO - Using AI to extract student information
+2025-03-12 00:44:51,983 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 00:44:51,984 - INFO - Parsed name: None, roll number: None
+2025-03-12 00:44:51,984 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 00:44:56,054 - INFO - Processing request from code360@emailer.codingninjas.in, Subject: =?utf-8?B?8J+aqCBBdHRlbnRpb24gQW1hbkRlZXAsIFlvdXIgTGVhZGVyYm9h?=
+	=?utf-8?B?cmQgUmFuayBpcyBkb3du4qyH77iPIEFjdCBOb3ch?=
+2025-03-12 00:44:56,054 - INFO - Using AI to extract student information
+2025-03-12 00:44:57,129 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 00:44:57,129 - INFO - Parsed name: None, roll number: None
+2025-03-12 00:44:57,129 - WARNING - Could not extract roll number from email from code360@emailer.codingninjas.in
+2025-03-12 00:45:00,960 - INFO - Processing request from amantechwiz@gmail.com, Subject: [RANK]
+2025-03-12 00:45:00,960 - INFO - Using AI to extract student information
+2025-03-12 00:45:01,608 - INFO - AI extraction result: Name: Amandeep
+Roll Number: 2205967
+
+2025-03-12 00:45:01,608 - INFO - Parsed name: Amandeep, roll number: 2205967
+2025-03-12 00:45:01,609 - ERROR - Database error when retrieving student info: no such column: cgpa
+2025-03-12 00:45:01,609 - WARNING - Student with roll number 2205967 not found in database
+2025-03-12 00:45:05,891 - INFO - Processing complete
+2025-03-12 00:52:21,147 - ERROR - Error updating student ranks: no such column: id
+2025-03-12 00:52:21,147 - INFO - Starting AI-powered rank certificate generator
+2025-03-12 00:52:23,380 - INFO - No new rank certificate requests found
+2025-03-12 00:52:23,696 - INFO - Processing complete
+2025-03-12 00:52:47,032 - ERROR - Error updating student ranks: no such column: id
+2025-03-12 00:52:47,033 - INFO - Starting AI-powered rank certificate generator
+2025-03-12 00:52:49,062 - INFO - No new rank certificate requests found
+2025-03-12 00:52:49,343 - INFO - Processing complete
+2025-03-12 00:55:21,001 - ERROR - Error updating student ranks: no such column: id
+2025-03-12 00:55:21,001 - INFO - Starting AI-powered rank certificate generator
+2025-03-12 00:55:49,688 - INFO - No new rank certificate requests found
+2025-03-12 00:55:54,297 - INFO - Processing complete
+2025-03-12 00:58:45,184 - ERROR - Error updating student ranks: no such column: id
+2025-03-12 00:58:45,184 - INFO - Starting AI-powered rank certificate generator
+2025-03-12 00:58:50,120 - INFO - No new rank certificate requests found
+2025-03-12 00:58:50,940 - INFO - Processing complete
+2025-03-12 00:59:07,445 - ERROR - Error updating student ranks: no such column: id
+2025-03-12 00:59:07,445 - INFO - Starting AI-powered rank certificate generator
+2025-03-12 00:59:11,727 - INFO - No new rank certificate requests found
+2025-03-12 00:59:12,212 - INFO - Processing complete
+2025-03-12 01:27:03,630 - ERROR - Error updating student ranks: no such column: id
+2025-03-12 01:27:03,631 - INFO - Starting AI-powered rank certificate generator
+2025-03-12 01:27:05,957 - INFO - No new rank certificate requests found
+2025-03-12 01:27:06,300 - INFO - Processing complete
+2025-03-12 01:27:17,897 - INFO - Created certificates directory: certificates
+2025-03-12 01:27:17,899 - ERROR - Error updating student ranks: no such column: id
+2025-03-12 01:27:17,899 - INFO - Starting AI-powered rank certificate generator
+2025-03-12 01:27:20,123 - INFO - No new rank certificate requests found
+2025-03-12 01:27:20,432 - INFO - Processing complete
+2025-03-12 01:30:14,314 - ERROR - Error updating student ranks: no such column: id
+2025-03-12 01:30:21,361 - ERROR - Error updating student ranks: no such column: id
+2025-03-12 01:30:21,361 - INFO - Starting AI-powered rank certificate generator
+2025-03-12 01:30:23,975 - INFO - No new rank certificate requests found
+2025-03-12 01:30:24,256 - INFO - Processing complete
+2025-03-12 01:32:04,304 - ERROR - Error updating student ranks: no such column: id
+2025-03-12 01:32:04,304 - INFO - Starting AI-powered rank certificate generator
+2025-03-12 01:32:06,240 - INFO - Found 12 rank certificate requests
+2025-03-12 01:32:06,241 - ERROR - Error updating student ranks: no such column: id
+2025-03-12 01:32:06,652 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_Kullthegreat_is_live_now=3A_DAILY_MORNING_FUN_RAN?=
+	=?UTF-8?Q?K_PUSH_GRIND_=7C_NEW_BGMI_STREAM_TIME?=
+2025-03-12 01:32:06,652 - INFO - Using AI to extract student information
+2025-03-12 01:32:08,593 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:32:08,594 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:32:08,594 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 01:32:12,940 - INFO - Processing request from store-news@amazon.in, Subject: A guide to get a top 50 rank...
+2025-03-12 01:32:12,940 - INFO - Using AI to extract student information
+2025-03-12 01:32:13,564 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:32:13,564 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:32:13,564 - WARNING - Could not extract roll number from email from store-news@amazon.in
+2025-03-12 01:32:16,728 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_Kullthegreat_is_live_now=3A_PUBG_NEW_STATE_=3A_SENS?=
+	=?UTF-8?Q?I_SET_NOW_RANK_PUSH_WITH_NEW_TEAM?=
+2025-03-12 01:32:16,728 - INFO - Using AI to extract student information
+2025-03-12 01:32:17,272 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:32:17,273 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:32:17,273 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 01:32:20,314 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_First_Event_in_Nox_Vision_?=
+	=?UTF-8?Q?Soon_Join_to_Participate_=7C_Rank_push_Continues_in_CODM_=7C_AGE?=
+	=?UTF-8?Q?NTHP_=7C=21discord?=
+2025-03-12 01:32:20,314 - INFO - Using AI to extract student information
+2025-03-12 01:32:20,871 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:32:20,871 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:32:20,871 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 01:32:23,882 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_Soft_Launch_me_RANK_PUSH_k?=
+	=?UTF-8?Q?on_kon_karega=3F_ft=2E_Cod_Mobile_BR_=7C_AGENTHP?=
+2025-03-12 01:32:23,882 - INFO - Using AI to extract student information
+2025-03-12 01:32:24,431 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:32:24,431 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:32:24,431 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 01:32:27,499 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_RANK_PUSH=21_Stimmed_up_and_?=
+	=?UTF-8?Q?ready_to_burn_=7C_Apex_Legends_Mobile_=7C_AGENTHP?=
+2025-03-12 01:32:27,499 - INFO - Using AI to extract student information
+2025-03-12 01:32:28,034 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:32:28,034 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:32:28,034 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 01:32:31,807 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_Gaming_Merchant_Mobile_is_live_now=3A_Apex_Legend?=
+	=?UTF-8?Q?s_Mobile_GLOBAL_LAUNCH_Is_LIVE=21_=2D_The_Grind_To_Apex_Predator?=
+	=?UTF-8?Q?_Rank_Begins?=
+2025-03-12 01:32:31,807 - INFO - Using AI to extract student information
+2025-03-12 01:32:32,366 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:32:32,366 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:32:32,366 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 01:32:35,454 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_Season_2_Rank_Grind_Begins?=
+	=?UTF-8?Q?_=7C_Apex_Legends_Mobile_=7C_AgentHP?=
+2025-03-12 01:32:35,455 - INFO - Using AI to extract student information
+2025-03-12 01:32:36,005 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:32:36,005 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:32:36,005 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 01:32:39,080 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_ZOIDZILLA_is_live_now=3A_SEASON_2_PREDATOR_RANK_G?=
+	=?UTF-8?Q?RIND_BEGINS_=7C_Apex_Legends_Mobile_=7C_ZOIDZILLA?=
+2025-03-12 01:32:39,080 - INFO - Using AI to extract student information
+2025-03-12 01:32:39,623 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:32:39,623 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:32:39,623 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 01:32:42,608 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_Season_2_Master_Rank_Grind?=
+	=?UTF-8?Q?_=7C_Apex_Legends_Mobile_=7C_AgentHP?=
+2025-03-12 01:32:42,609 - INFO - Using AI to extract student information
+2025-03-12 01:32:43,136 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:32:43,136 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:32:43,136 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 01:32:47,565 - INFO - Processing request from code360@emailer.codingninjas.in, Subject: =?utf-8?B?8J+aqCBBdHRlbnRpb24gQW1hbkRlZXAsIFlvdXIgTGVhZGVyYm9h?=
+	=?utf-8?B?cmQgUmFuayBpcyBkb3du4qyH77iPIEFjdCBOb3ch?=
+2025-03-12 01:32:47,565 - INFO - Using AI to extract student information
+2025-03-12 01:32:48,553 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 01:32:48,553 - INFO - Parsed name: None, roll number: None
+2025-03-12 01:32:48,553 - WARNING - Could not extract roll number from email from code360@emailer.codingninjas.in
+2025-03-12 01:32:52,962 - INFO - Processing request from amantechwiz@gmail.com, Subject: [RANK]
+2025-03-12 01:32:52,962 - INFO - Using AI to extract student information
+2025-03-12 01:32:53,557 - INFO - AI extraction result: Name: Amandeep
+Roll Number: 2205967
+
+2025-03-12 01:32:53,557 - INFO - Parsed name: Amandeep, roll number: 2205967
+2025-03-12 01:32:53,561 - INFO - Certificate generated successfully: certificates\2205967_rank_certificate.pdf
+2025-03-12 01:32:56,286 - INFO - Certificate sent to amantechwiz@gmail.com for student 2205967
+2025-03-12 01:32:56,286 - ERROR - Error updating rank_generation status: CHECK constraint failed: rank_generation IN ('Yes', 'No')
+2025-03-12 01:32:56,286 - INFO - Certificate saved at: certificates\2205967_rank_certificate.pdf
+2025-03-12 01:32:56,849 - INFO - Processing complete

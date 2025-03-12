@@ -64,7 +64,7 @@ knowledge_base = PDFKnowledgeBase(
     reader=PDFReader(chunk=True)
 )
 
-knowledge_base.load(recreate=True)
+knowledge_base.load(recreate=False)
 
 # --- Agent Initialization ---
 pdf_qa_agent = Agent(
