@@ -48,10 +48,38 @@ We will have a Dummy Student DB with the Names, CGPAs and Attendance (consider o
         Minor adjustments needed for frontend UI and email formatting.
     
 - Rank Certficate
-  - Very similar to the above. 
+  - This agent processes requests for rank certificates. It updates student ranks based on CGPA, generates rank certificates, and emails them to students.
+
+  - Features:
+              - Email Retrieval: Connects to the admin's email and scans for unread emails with [RANK] in the subject line.
+              - AI Extraction: Uses Gemini AI to extract student name and roll number from the email content.
+              - Rank Calculation: Updates student ranks based on CGPA and sorts by name in case of ties.
+              - Certificate Generation: Creates a PDF rank certificate including the student’s rank, CGPA, and department.
+              - Email Notifications: Sends rank certificates or error notifications.
+              - Logging: Logs all activities and errors.
+
+  - Flow:
+              - Admin receives a request email with [RANK] in the subject.
+              - The agent extracts student information using AI.
+              - It updates and retrieves the student’s rank from the database.
+              - It generates and emails the certificate.
+              - If an error occurs, it notifies the student.
 
 - Scholarship Certification (Check CGPA & Check Attendance)
-  - Also very similar. Can copy paste the code above and make changes to the headings and small places in the code. 
+  - This agent handles scholarship certificate requests. It checks the admin's email for requests, verifies student eligibility, generates PDF certificates, and emails them to students.
+  - Features:
+              - Email Retrieval: Connects to the admin's email and scans for unread emails with [SCHOLARSHIP] in the subject line.
+              - AI Extraction: Uses Gemini AI to extract student name and roll number from the email content.
+              - Eligibility Check: Validates CGPA and attendance against scholarship criteria stored in a database.
+              - Certificate Generation: Creates a PDF certificate for eligible students, including their rank, CGPA, and attendance.
+              - Email Notifications: Sends certificates to eligible students or error/ineligibility notifications otherwise.
+              - Logging: Logs all activities and errors.
+  - Flow:
+              - Admin receives a request email with [SCHOLARSHIP] in the subject.
+              - The agent extracts student information using AI.
+              - It validates eligibility from the database.
+              - If eligible, it generates and sends the certificate.
+              - If not eligible or there’s an error, it emails the student.
 
 ### Placement Activites (User Facing, must be a Chat Interface)
 - ⁠KIIT Event Summaries (Web-Scraping)
