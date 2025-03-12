@@ -80,7 +80,7 @@ pdf_qa_agent = Agent(
         "Encourage the user to review the full details in the document if needed.",
         "Remember previous queries in this session and provide responses based on context.",
         "ONLY ANSWER QUERIES RELATED TO PDFS UPLOADED , SUCH AS placements , internships and hackathons"
-        "AT ANY COST "
+        "AT ANY COST dont deviate from our decided topic"
     ],
 )
 
