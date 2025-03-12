@@ -41,9 +41,15 @@ def fetch_noc_emails(username, password):
     imap_server.login(username, password)
     imap_server.select("inbox")
 
-    status, messages = imap_server.search(None, '(SUBJECT "[NOC]")')
+    # Updated search criteria:
+    # 1. Subject has [NOC]
+    # 2. NOT FROM the current email account (to exclude sent/replied emails)
+    # 3. Only get UNSEEN (unread) emails to avoid processing previously handled requests
+    search_criteria = f'(SUBJECT "[NOC]" NOT FROM "{username}" UNSEEN)'
+    status, messages = imap_server.search(None, search_criteria)
+    
     if status != "OK":
-        print("No emails found or error in search.")
+        print("No unread NOC emails found or error in search.")
         imap_server.logout()
         return []
 
@@ -58,9 +64,14 @@ def fetch_noc_emails(username, password):
         raw_email = msg_data[0][1]
         msg = email.message_from_bytes(raw_email)
         msg_id = msg.get("Message-ID")
+        
+        # Skip duplicates
         if msg_id in seen_message_ids:
             continue
         seen_message_ids.add(msg_id)
+        
+        # Store the email_id with the message for later reference
+        msg.email_id = email_id
         emails.append(msg)
 
     imap_server.logout()
@@ -197,20 +208,28 @@ def send_noc_certificate(to_email, pdf_buffer, name):
     server.send_message(msg)
     server.quit()
 
+def mark_emails_as_processed(emails):
+    """Mark processed emails as read in the inbox"""
+    imap_server = imaplib.IMAP4_SSL(IMAP_SERVER)
+    imap_server.login(EMAIL_ACCOUNT, EMAIL_PASSWORD)
+    imap_server.select("inbox")
+    
+    for msg in emails:
+        if hasattr(msg, 'email_id'):
+            # Mark the email as read
+            imap_server.store(msg.email_id, '+FLAGS', '\\Seen')
+    
+    imap_server.logout()
+
 # GET endpoint to fetch NOC requests from emails
 @router.get("/fetch-noc-requests")
 async def fetch_noc_requests():
     emails = fetch_noc_emails(EMAIL_ACCOUNT, EMAIL_PASSWORD)
-    print(f"Fetched {len(emails)} emails with [NOC].")
+    print(f"Fetched {len(emails)} unread emails with [NOC].")
     student_requests = []
-    seen_message_ids = set()
+    processed_emails = []
 
     for msg in emails:
-        msg_id = msg.get("Message-ID")
-        if msg_id in seen_message_ids:
-            continue
-        seen_message_ids.add(msg_id)
-
         # Extract sender email
         from_header = msg.get("From", "")
         match = re.search(r"<(.+?)>", from_header)
@@ -242,6 +261,7 @@ async def fetch_noc_requests():
             "cgpa": cgpa
         }
         student_requests.append(student_obj)
+        processed_emails.append(msg)
 
     return student_requests
 

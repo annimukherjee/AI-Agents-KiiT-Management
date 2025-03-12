@@ -205,3 +205,152 @@ Roll Number: 2205967
 2025-03-12 17:29:41,746 - INFO - Parsed name: AMANDEEP, roll number: 2205967
 2025-03-12 17:29:41,747 - INFO - Student 2205967 is not eligible for scholarship (CGPA: 8.6, Attendance: 67.12)
 2025-03-12 21:50:41,612 - INFO - Created certificates directory: certificates
+2025-03-12 22:53:57,274 - ERROR - Error updating student ranks: CHECK constraint failed: rank_generation IN ('Yes', 'No')
+2025-03-12 22:53:57,274 - INFO - Starting AI-powered rank certificate generator
+2025-03-12 22:53:59,276 - INFO - Found 12 rank certificate requests
+2025-03-12 22:54:04,804 - ERROR - Error updating student ranks: database is locked
+2025-03-12 22:54:05,216 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_Kullthegreat_is_live_now=3A_DAILY_MORNING_FUN_RAN?=
+	=?UTF-8?Q?K_PUSH_GRIND_=7C_NEW_BGMI_STREAM_TIME?=
+2025-03-12 22:54:05,216 - INFO - Using AI to extract student information
+2025-03-12 22:54:05,771 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 22:54:05,771 - INFO - Parsed name: None, roll number: None
+2025-03-12 22:54:05,771 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 22:54:10,168 - INFO - Processing request from store-news@amazon.in, Subject: A guide to get a top 50 rank...
+2025-03-12 22:54:10,168 - INFO - Using AI to extract student information
+2025-03-12 22:54:10,771 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 22:54:10,772 - INFO - Parsed name: None, roll number: None
+2025-03-12 22:54:10,772 - WARNING - Could not extract roll number from email from store-news@amazon.in
+2025-03-12 22:54:14,855 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_Kullthegreat_is_live_now=3A_PUBG_NEW_STATE_=3A_SENS?=
+	=?UTF-8?Q?I_SET_NOW_RANK_PUSH_WITH_NEW_TEAM?=
+2025-03-12 22:54:14,855 - INFO - Using AI to extract student information
+2025-03-12 22:54:15,400 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 22:54:15,400 - INFO - Parsed name: None, roll number: None
+2025-03-12 22:54:15,400 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 22:54:18,661 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_First_Event_in_Nox_Vision_?=
+	=?UTF-8?Q?Soon_Join_to_Participate_=7C_Rank_push_Continues_in_CODM_=7C_AGE?=
+	=?UTF-8?Q?NTHP_=7C=21discord?=
+2025-03-12 22:54:18,662 - INFO - Using AI to extract student information
+2025-03-12 22:54:19,202 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 22:54:19,202 - INFO - Parsed name: None, roll number: None
+2025-03-12 22:54:19,202 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 22:54:23,109 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_Soft_Launch_me_RANK_PUSH_k?=
+	=?UTF-8?Q?on_kon_karega=3F_ft=2E_Cod_Mobile_BR_=7C_AGENTHP?=
+2025-03-12 22:54:23,109 - INFO - Using AI to extract student information
+2025-03-12 22:54:23,672 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 22:54:23,672 - INFO - Parsed name: None, roll number: None
+2025-03-12 22:54:23,672 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 22:54:27,773 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_RANK_PUSH=21_Stimmed_up_and_?=
+	=?UTF-8?Q?ready_to_burn_=7C_Apex_Legends_Mobile_=7C_AGENTHP?=
+2025-03-12 22:54:27,773 - INFO - Using AI to extract student information
+2025-03-12 22:54:28,306 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 22:54:28,306 - INFO - Parsed name: None, roll number: None
+2025-03-12 22:54:28,306 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 22:54:31,550 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_Gaming_Merchant_Mobile_is_live_now=3A_Apex_Legend?=
+	=?UTF-8?Q?s_Mobile_GLOBAL_LAUNCH_Is_LIVE=21_=2D_The_Grind_To_Apex_Predator?=
+	=?UTF-8?Q?_Rank_Begins?=
+2025-03-12 22:54:31,550 - INFO - Using AI to extract student information
+2025-03-12 22:54:32,120 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 22:54:32,121 - INFO - Parsed name: None, roll number: None
+2025-03-12 22:54:32,121 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 22:54:35,531 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_Season_2_Rank_Grind_Begins?=
+	=?UTF-8?Q?_=7C_Apex_Legends_Mobile_=7C_AgentHP?=
+2025-03-12 22:54:35,531 - INFO - Using AI to extract student information
+2025-03-12 22:54:36,106 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 22:54:36,106 - INFO - Parsed name: None, roll number: None
+2025-03-12 22:54:36,106 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 22:54:39,449 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_ZOIDZILLA_is_live_now=3A_SEASON_2_PREDATOR_RANK_G?=
+	=?UTF-8?Q?RIND_BEGINS_=7C_Apex_Legends_Mobile_=7C_ZOIDZILLA?=
+2025-03-12 22:54:39,449 - INFO - Using AI to extract student information
+2025-03-12 22:54:40,302 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 22:54:40,303 - INFO - Parsed name: None, roll number: None
+2025-03-12 22:54:40,303 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 22:54:44,370 - INFO - Processing request from noreply@youtube.com, Subject: =?UTF-8?Q?=F0=9F=94=B4_AgentHP_is_live_now=3A_Season_2_Master_Rank_Grind?=
+	=?UTF-8?Q?_=7C_Apex_Legends_Mobile_=7C_AgentHP?=
+2025-03-12 22:54:44,370 - INFO - Using AI to extract student information
+2025-03-12 22:54:44,997 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 22:54:44,998 - INFO - Parsed name: None, roll number: None
+2025-03-12 22:54:44,998 - WARNING - Could not extract roll number from email from noreply@youtube.com
+2025-03-12 22:54:49,322 - INFO - Processing request from code360@emailer.codingninjas.in, Subject: =?utf-8?B?8J+aqCBBdHRlbnRpb24gQW1hbkRlZXAsIFlvdXIgTGVhZGVyYm9h?=
+	=?utf-8?B?cmQgUmFuayBpcyBkb3du4qyH77iPIEFjdCBOb3ch?=
+2025-03-12 22:54:49,323 - INFO - Using AI to extract student information
+2025-03-12 22:54:50,333 - INFO - AI extraction result: Name: Unknown
+Roll Number: Unknown
+
+2025-03-12 22:54:50,334 - INFO - Parsed name: None, roll number: None
+2025-03-12 22:54:50,334 - WARNING - Could not extract roll number from email from code360@emailer.codingninjas.in
+2025-03-12 22:54:54,595 - INFO - Processing request from amantechwiz@gmail.com, Subject: [RANK]
+2025-03-12 22:54:54,595 - INFO - Using AI to extract student information
+2025-03-12 22:54:55,212 - INFO - AI extraction result: Name: Amandeep
+Roll Number: 2205967
+
+2025-03-12 22:54:55,212 - INFO - Parsed name: Amandeep, roll number: 2205967
+2025-03-12 22:54:55,219 - INFO - Certificate generated successfully: certificates\2205967_rank_certificate.pdf
+2025-03-12 22:54:58,511 - INFO - Certificate sent to amantechwiz@gmail.com for student 2205967
+2025-03-12 22:54:58,513 - ERROR - Error updating rank_generation status: CHECK constraint failed: rank_generation IN ('Yes', 'No')
+2025-03-12 22:54:58,513 - INFO - Certificate saved at: certificates\2205967_rank_certificate.pdf
+2025-03-12 22:54:59,154 - INFO - Processing complete
+2025-03-12 23:10:36,844 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:10:38,568 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:10:52,411 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:10:54,776 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:10:56,343 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:11:15,733 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:11:17,259 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:11:40,065 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:11:41,570 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:12:20,757 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:12:23,458 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:13:08,551 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:13:10,082 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:16:15,180 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:16:17,701 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:16:43,353 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:16:44,684 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:17:05,210 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:17:08,353 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:17:11,191 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:17:28,464 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:17:29,827 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:17:34,707 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:17:36,015 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:17:51,357 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:17:52,658 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:18:02,152 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:18:03,548 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:21:47,355 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:22:05,483 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:22:08,171 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:23:54,513 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:23:57,273 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:24:14,662 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:24:22,343 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:24:23,861 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:24:45,147 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:24:49,943 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:24:51,459 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:25:19,271 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:25:21,963 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:25:33,899 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:25:35,446 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
+2025-03-12 23:27:00,371 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-12 23:27:03,277 - INFO - HTTP Request: POST https://api.agno.com/v1/telemetry/agent/run/create "HTTP/1.1 200 OK"
