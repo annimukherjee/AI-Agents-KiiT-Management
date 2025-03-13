@@ -17,6 +17,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email import encoders
+from pydantic import BaseModel
+from typing import List
 
 load_dotenv()
 
@@ -35,6 +37,20 @@ router = APIRouter(
 # Configure Gemini
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel("gemini-1.5-flash")
+
+class Student(BaseModel):
+    name: str
+    roll_no: str
+    email: str
+    verified: bool
+    from_date: str = None
+    to_date: str = None
+    pronoun: str = None
+    cgpa: str = None
+
+
+class StudentRequest(BaseModel):
+    students: List[Student]
 
 def fetch_noc_emails(username, password):
     imap_server = imaplib.IMAP4_SSL(IMAP_SERVER)
@@ -267,18 +283,18 @@ async def fetch_noc_requests():
 
 # POST endpoint to send NOC certificates for verified students
 @router.post("/send-noc-certificates")
-async def send_noc_certificates(request: list):
+async def send_noc_certificates(request_data: StudentRequest):
     processed_count = 0
-    for student in request:
-        if not student.get("verified", False):
+    for student in request_data.students:
+        if not student.verified:
             continue
-        name = student.get("name")
-        roll_no = student.get("roll_no")
-        from_date = student.get("from_date")
-        to_date = student.get("to_date")
-        pronoun = student.get("pronoun")
-        cgpa = student.get("cgpa")
-        email_addr = student.get("email")
+        name = student.name
+        roll_no = student.roll_no
+        from_date = student.from_date
+        to_date = student.to_date
+        pronoun = student.pronoun
+        cgpa = student.cgpa
+        email_addr = student.email
         pdf_buffer = generate_noc_pdf_in_memory(name, roll_no, from_date, to_date, pronoun, cgpa)
         send_noc_certificate(email_addr, pdf_buffer, name)
         processed_count += 1
