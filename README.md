@@ -4,6 +4,10 @@ Code to make AI agents for KIIT. These agents automate boring tasks using a mix 
 
 We will have a Dummy Student DB with the Names, CGPAs and Attendance (consider one number for now). 
 
+![WhatsApp Image 2025-03-13 at 11 18 38_66a17082](https://github.com/user-attachments/assets/52846285-6ee9-486c-974e-37edccdf52ca)
+
+
+
 ## Roadmap:
 
 
