@@ -124,27 +124,3 @@ SMTP_SERVER=smtp.gmail.com
 SMTP_PORT=xxxx               # Port for Email Application
 YOUTUBE_API_KEY=xxxx          # Get your key at https://www.getphyllo.com/post/how-to-get-youtube-api-key
 ```
-
-
-
-## File Structure:
-
-```
-.
-├── -academic-activities
-│   └── academic-cal.py
-├── -compliance-agents
-│   ├── Wifi_reset.py
-│   ├── bonafide-emails.py
-│   ├── create_db.py
-│   ├── noc.py
-│   └── students.db
-├── -placement-agent
-│   ├── PlacementQueries.py
-│   ├── kiit-pdfs-kareer
-│   ├── kiit-pdfs-kareer-markdown
-│   └── pdf_emails
-├── -tutor-mentor
-│   └── leave-cert.py
-└── README.md
-```
