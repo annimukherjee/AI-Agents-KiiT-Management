@@ -120,14 +120,8 @@ cp .env.example .env
 
 6. Edit the `.env` file with your preferred text editor and add your API keys:
 ```bash
-# Required: Choose one search provider and add its API key
-TAVILY_API_KEY=tvly-xxxxx      # Get your key at https://tavily.com
-PERPLEXITY_API_KEY=pplx-xxxxx  # Get your key at https://www.perplexity.ai
-PERPLEXITY_API_KEY=pplx-xxxxx  # Get your key at https://www.perplexity.ai
-SMTP_USERNAME=xxxx@gmail.com   # The email you will send from
-SMTP_PASSWORD=xxxx             # Get your app password from https://myaccount.google.com/apppasswords
-EMAIL_RECIPIENT=xxxx@gmail.com  # The email that will receive the summary
-SMTP_SERVER=smtp.gmail.com
-SMTP_PORT=xxxx               # Port for Email Application
-YOUTUBE_API_KEY=xxxx          # Get your key at https://www.getphyllo.com/post/how-to-get-youtube-api-key
+EMAIL_PASSWORD=xxx
+EMAIL=xxx@gmail.com
+GROQ_API_KEY=""
+GOOGLE_API_KEY=""
 ```
