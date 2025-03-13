@@ -4,7 +4,6 @@ Code to make AI agents for KIIT. These agents automate boring tasks using a mix 
 
 We will have a Dummy Student DB with the Names, CGPAs and Attendance (consider one number for now). 
 
-gdyw
 ## Roadmap:
 
 
@@ -31,22 +30,22 @@ gdyw
     - Admin Panel Integration
 
     - Access Admin’s email inbox.
-        Fetch all emails with [WIFI RESET] in the subject line.
-        Frontend Display
+        - Fetch all emails with [WIFI RESET] in the subject line.
+        - Frontend Display
 
     - Show the list of reset requests (plain text).
-        Include details like student ID, name, and request timestamp.
-        Action Buttons
+        - Include details like student ID, name, and request timestamp.
+        - Action Buttons
 
     - Admin can click a "Reset WiFi" button.
-        On click, trigger the backend to process the reset.
-        Email Confirmation
-        After reset, an automatic confirmation email is sent to the student.
-        Email content includes reset status and troubleshooting tips.
+        - On click, trigger the backend to process the reset.
+        - Email Confirmation
+        - After reset, an automatic confirmation email is sent to the student.
+        - Email content includes reset status and troubleshooting tips.
   
     - Current Status
-        Backend logic is complete.
-        Minor adjustments needed for frontend UI and email formatting.
+        - Backend logic is complete.
+        - Minor adjustments needed for frontend UI and email formatting.
     
 - Rank Certficate
   - This agent processes requests for rank certificates. It updates student ranks based on CGPA, generates rank certificates, and emails them to students.
