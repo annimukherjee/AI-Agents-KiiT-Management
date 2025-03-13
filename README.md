@@ -103,6 +103,30 @@ We will have a Dummy Student DB with the Names, CGPAs and Attendance (consider o
 
 ![WhatsApp Image 2025-03-12 at 20 48 41_a212c4c3](https://github.com/user-attachments/assets/aabfa62a-cd9f-4145-ac7c-3b8141770e8f)
 
+
+### Sample env file:
+
+Copy the example environment file:
+```bash
+cp .env.example .env
+```
+
+6. Edit the `.env` file with your preferred text editor and add your API keys:
+```bash
+# Required: Choose one search provider and add its API key
+TAVILY_API_KEY=tvly-xxxxx      # Get your key at https://tavily.com
+PERPLEXITY_API_KEY=pplx-xxxxx  # Get your key at https://www.perplexity.ai
+PERPLEXITY_API_KEY=pplx-xxxxx  # Get your key at https://www.perplexity.ai
+SMTP_USERNAME=xxxx@gmail.com   # The email you will send from
+SMTP_PASSWORD=xxxx             # Get your app password from https://myaccount.google.com/apppasswords
+EMAIL_RECIPIENT=xxxx@gmail.com  # The email that will receive the summary
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=xxxx               # Port for Email Application
+YOUTUBE_API_KEY=xxxx          # Get your key at https://www.getphyllo.com/post/how-to-get-youtube-api-key
+```
+
+
+
 ## File Structure:
 
 ```
