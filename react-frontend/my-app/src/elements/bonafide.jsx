@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import API_ENDPOINTS from '../config';
 
 function BonafideProcessor() {
     const [isLoading, setIsLoading] = useState(false);
@@ -13,7 +14,7 @@ function BonafideProcessor() {
         setSelectedStudents({});
 
         try {
-            const response = await fetch('http://localhost:8000/fetch-bonafide-requests');
+            const response = await fetch(API_ENDPOINTS.fetchBonafideRequests);
 
             if (!response.ok) {
                 throw new Error(`Server responded with status: ${response.status}`);
@@ -84,7 +85,7 @@ function BonafideProcessor() {
         setMessage(null);
 
         try {
-            const response = await fetch('http://localhost:8000/send-certificates', {
+            const response = await fetch(API_ENDPOINTS.sendBonafideCertificates, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

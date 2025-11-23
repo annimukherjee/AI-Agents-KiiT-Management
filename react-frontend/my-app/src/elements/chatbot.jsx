@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import API_ENDPOINTS from '../config';
 
 function Chatbot() {
   const [messages, setMessages] = useState([]);
@@ -17,7 +18,7 @@ function Chatbot() {
 
     try {
       // Call your Python backend here
-      const response = await fetch('http://localhost:8000/placement/bot', {
+      const response = await fetch(API_ENDPOINTS.placementBot, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

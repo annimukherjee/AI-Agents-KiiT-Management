@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import API_ENDPOINTS from '../config';
 
 function ScholarshipProcessor() {
     const [isProcessing, setIsProcessing] = useState(false);
@@ -10,7 +11,7 @@ function ScholarshipProcessor() {
 
         try {
             // Call the process endpoint (GET or POST as per backend; here GET is used)
-            const response = await fetch('http://localhost:8000/scholarship/process', {
+            const response = await fetch(API_ENDPOINTS.fetchScholarshipRequests, {
                 method: 'GET'
             });
 
