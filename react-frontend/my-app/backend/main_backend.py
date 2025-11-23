@@ -7,7 +7,8 @@ import re
 import sqlite3
 import uvicorn
 import os
-from email.header import decode_header
+import sys
+from pathlib import Path
 from dotenv import load_dotenv
 import google.generativeai as genai
 import smtplib
@@ -23,22 +24,29 @@ from Placement_backend import router as placement_router
 from rank_backend import router as rank_router
 from scholarship_backend import router as scholarship_router
 
+# Add parent directories to path for config import
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent.parent))
+from config import API_KEYS, AI_MODELS, CORS_CONFIG, EMAIL_CONFIG, DATABASE_CONFIG
+
 load_dotenv()
 
-app = FastAPI()
+app = FastAPI(title="KiiT AI Agents API", version="1.0.0")
 
-# Allow CORS for React frontend
+# CORS Configuration - Use centralized config instead of allowing all origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=CORS_CONFIG["allowed_origins"],  # Only allow specific origins
+    allow_credentials=CORS_CONFIG["allow_credentials"],
+    allow_methods=CORS_CONFIG["allow_methods"],
+    allow_headers=CORS_CONFIG["allow_headers"],
 )
 
 # Configure the Google Generative AI client
-genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
-model = genai.GenerativeModel('gemini-1.5-flash')
+if not API_KEYS["google"]:
+    raise ValueError("❌ GOOGLE_API_KEY is missing from .env file!")
+
+genai.configure(api_key=API_KEYS["google"])
+model = genai.GenerativeModel(AI_MODELS["gemini"])
 
 # Data models for the API
 class StudentInfo(BaseModel):

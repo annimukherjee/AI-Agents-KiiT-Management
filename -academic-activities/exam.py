@@ -1,29 +1,40 @@
 import easyocr
 import numpy as np
+import sys
+from pathlib import Path
 import google.generativeai as genai
 from pdf2image import convert_from_path
 from dotenv import load_dotenv
-import os
+
+# Add parent directory to path for config import
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from config import API_KEYS, AI_MODELS, FILE_PATHS
 
 # Load environment variables
 load_dotenv()
 
-# Load Gemini API Key
-api_key = os.getenv("GOOGLE_API_KEY")
-if not api_key:
+# Configure Gemini API
+if not API_KEYS["google"]:
     raise ValueError("❌ GOOGLE_API_KEY is missing from .env file!")
 
 print("✅ API Key Loaded Successfully!")
-
-# Configure Gemini API
-genai.configure(api_key=api_key)
+genai.configure(api_key=API_KEYS["google"])
 
 # Load OCR model
 reader = easyocr.Reader(['en'])
 
+# File path for the exam schedule PDF
+pdf_path = FILE_PATHS["exam_schedule"]
+
+# Check if PDF file exists
+if not pdf_path.exists():
+    raise FileNotFoundError(
+        f"❌ Exam schedule PDF not found at: {pdf_path}\n"
+        f"Please ensure the file exists at the correct location."
+    )
+
 # Convert PDF pages to images
-pdf_path = r"C:\Users\AmanDeep\OneDrive\Desktop\AI-Agents-KiiT-Management\-academic-activities\midsems.pdf"
-images = convert_from_path(pdf_path, dpi=300)
+images = convert_from_path(str(pdf_path), dpi=300)
 
 extracted_text = ""
 
@@ -43,7 +54,7 @@ def format_exam_schedule_with_gemini(extracted_text):
     if not extracted_text.strip():
         return "⚠ No valid extracted text available from the academic calendar."
 
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel(AI_MODELS["gemini"])
 
     prompt = f"""
 You are an expert in structuring academic exam schedules. Given the extracted text from a university exam schedule, your task is to:

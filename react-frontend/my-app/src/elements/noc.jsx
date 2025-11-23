@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import API_ENDPOINTS from '../config';
 
 function NOCProcessor() {
     const [isLoading, setIsLoading] = useState(false);
@@ -11,7 +12,7 @@ function NOCProcessor() {
         setMessage(null);
 
         try {
-            const response = await fetch('http://localhost:8000/noc/fetch-noc-requests');
+            const response = await fetch(API_ENDPOINTS.fetchNocRequests);
 
             if (!response.ok) {
                 throw new Error(`Server responded with status: ${response.status}`);
@@ -57,7 +58,7 @@ function NOCProcessor() {
         setMessage(null);
 
         try {
-            const response = await fetch('http://localhost:8000/noc/send-noc-certificates', {
+            const response = await fetch(API_ENDPOINTS.sendNocCertificates, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

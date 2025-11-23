@@ -1,20 +1,23 @@
 import os
+import sys
+from pathlib import Path
 import fitz  # PyMuPDF for PDF text extraction
 import google.generativeai as genai
 from dotenv import load_dotenv
 
+# Add parent directory to path for config import
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from config import API_KEYS, AI_MODELS, FILE_PATHS
+
 # Load environment variables
 load_dotenv()
 
-# Load Gemini API Key
-api_key = os.getenv("GOOGLE_API_KEY")
-if not api_key:
+# Configure Gemini API
+if not API_KEYS["google"]:
     raise ValueError("❌ GOOGLE_API_KEY is missing from .env file!")
 
 print("✅ API Key Loaded Successfully!")
-
-# Configure Gemini API
-genai.configure(api_key=api_key)
+genai.configure(api_key=API_KEYS["google"])
 
 # Function to extract text from the academic calendar PDF
 def extract_text_from_pdf(pdf_path):
@@ -33,7 +36,7 @@ def format_calendar_with_gemini(extracted_text):
     if not extracted_text:
         return "⚠ No valid extracted text available from the academic calendar."
 
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel(AI_MODELS["gemini"])
 
     prompt = f""" 
     You are an expert in structuring academic data. Given the extracted text from a university academic calendar, your task is to:
@@ -52,11 +55,18 @@ def format_calendar_with_gemini(extracted_text):
     response = model.generate_content(prompt)
     return response.text if response else "⚠ Error: No response from Gemini AI."
 
-# File path for the academic calendar PDF (Update as per your system)
-academic_calendar_pdf_path = r"C:\Users\AmanDeep\OneDrive\Desktop\AI-Agents-KiiT-Management\-academic-activities\calender.pdf"
+# File path for the academic calendar PDF
+academic_calendar_pdf_path = FILE_PATHS["academic_calendar"]
+
+# Check if PDF file exists
+if not academic_calendar_pdf_path.exists():
+    raise FileNotFoundError(
+        f"❌ Academic calendar PDF not found at: {academic_calendar_pdf_path}\n"
+        f"Please ensure the file exists at the correct location."
+    )
 
 # Extract text from the academic calendar
-calendar_text = extract_text_from_pdf(academic_calendar_pdf_path)
+calendar_text = extract_text_from_pdf(str(academic_calendar_pdf_path))
 
 # Format the academic calendar using Gemini
 formatted_calendar = format_calendar_with_gemini(calendar_text)

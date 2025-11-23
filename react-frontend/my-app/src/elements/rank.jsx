@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import API_ENDPOINTS from '../config';
 
 function RankProcessor() {
     const [isLoading, setIsLoading] = useState(false);
@@ -11,7 +12,7 @@ function RankProcessor() {
         setMessage(null);
 
         try {
-            const response = await fetch('http://localhost:8000/ranking/rankchecker');
+            const response = await fetch(API_ENDPOINTS.rankChecker);
 
             if (!response.ok) {
                 throw new Error(`Server responded with status: ${response.status}`);
@@ -58,7 +59,7 @@ function RankProcessor() {
         setMessage(null);
 
         try {
-            const response = await fetch('http://localhost:8000/send-rank-certificates', {
+            const response = await fetch(API_ENDPOINTS.sendRankCertificates, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

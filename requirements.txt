@@ -1,24 +1,40 @@
-email
-re
-sqlite3
-os
-python-dotenv
-google-generativeai
-smtplib
-mimetypes
-reportlab
-fastapi
-uvicorn
-requests
-beautifulsoup4
-pandas
-easyocr
-transformers
-agno
-openai
-pypdf
-groq
-lancedb
-pdf2image
-fitz
-pymupdf
+# Core Dependencies
+python-dotenv==1.0.0
+
+# Email & SMTP
+# Note: email, smtplib, os, re, sqlite3, mimetypes are built-in Python modules
+
+# AI/ML Libraries
+google-generativeai==0.8.3
+groq==0.11.0
+openai==1.54.4
+transformers==4.46.2
+agno==0.0.15
+
+# PDF Processing
+reportlab==4.2.5
+pypdf==5.1.0
+pymupdf==1.25.1
+pdf2image==1.17.0
+
+# Web Framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# Web Scraping
+requests==2.32.3
+beautifulsoup4==4.12.3
+
+# Data Processing
+pandas==2.2.3
+
+# OCR
+easyocr==1.7.2
+
+# Vector Database
+lancedb==0.17.0
+
+# Additional dependencies for production
+pydantic==2.10.3
+pydantic-settings==2.6.1
+python-multipart==0.0.20

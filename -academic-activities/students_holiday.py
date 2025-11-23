@@ -1,13 +1,22 @@
 import fitz  # PyMuPDF
 import easyocr
-import os
+import sys
+from pathlib import Path
 import requests
 import json
 from dotenv import load_dotenv
 
+# Add parent directory to path for config import
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from config import API_KEYS, FILE_PATHS
+
 # Load environment variables
 load_dotenv()
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+if not API_KEYS["groq"]:
+    raise ValueError("❌ GROQ_API_KEY is missing from .env file!")
+
+GROQ_API_KEY = API_KEYS["groq"]
 
 # Initialize EasyOCR Reader
 reader = easyocr.Reader(["en"])  # Add other languages if needed
@@ -62,11 +71,18 @@ def process_with_groq(text):
     else:
         return f"⚠ API Error: {response.status_code} - {response.text}"
 
-# PDF File Path
-holiday_pdf_path = r"C:\Users\AmanDeep\OneDrive\Desktop\AI-Agents-KiiT-Management\-academic-activities\holiday.pdf"
+# File path for the holiday schedule PDF
+holiday_pdf_path = FILE_PATHS["holidays"]
+
+# Check if PDF file exists
+if not holiday_pdf_path.exists():
+    raise FileNotFoundError(
+        f"❌ Holiday schedule PDF not found at: {holiday_pdf_path}\n"
+        f"Please ensure the file exists at the correct location."
+    )
 
 # Extract text
-holiday_text = extract_text_from_pdf(holiday_pdf_path)
+holiday_text = extract_text_from_pdf(str(holiday_pdf_path))
 
 # Process with Groq if text was extracted
 if holiday_text:
